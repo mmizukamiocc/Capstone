@@ -20,8 +20,8 @@ class DBHelper extends SQLiteOpenHelper {
 
     //TASK 2: DEFINE THE FIELDS (COLUMN NAMES) FOR THE TABLE
     private static final String PETS_KEY_FIELD_ID = "id";
-    private static final String PETS_USER_ID = "userId";
-    private static final String PETS_FIELD_NAME = "petName";
+    private static final String PETS_USER_ID = "user_id";
+    private static final String PETS_FIELD_NAME = "pet_name";
     private static final String PETS_FIELD_TYPE = "type";
     private static final String PETS_FIELD_DESCRIPTION = "description";
     private static final String PETS_FIELD_ADAPTION = "adaption";
@@ -29,8 +29,8 @@ class DBHelper extends SQLiteOpenHelper {
     private static final String PETS_FIELD_IMAGE_URI = "imageURI";
 
     private static final String USERS_KEY_FIELD_ID = "id";
-    private static final String USERS_FIELD_USERNAME = "userName";
-    private static final String USERS_FIELD_REALNAME = "realName";
+    private static final String USERS_FIELD_USERNAME = "username";
+    private static final String USERS_FIELD_REALNAME = "real_name";
     private static final String USERS_FIELD_EMAIL = "email";
     private static final String USERS_FIELD_PHONE = "phone";
     private static final String USERS_FIELD_PASSWORD = "password";
