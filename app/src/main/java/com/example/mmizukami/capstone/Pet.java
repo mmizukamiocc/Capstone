@@ -8,6 +8,7 @@ import android.net.Uri;
 
 public class Pet {
     private int mId;
+    private int mUserId;
     private String mPetName;
     private String mType;
     private String mDescription;
@@ -85,5 +86,13 @@ public class Pet {
 
     public void setImageUri(Uri mImageUri) {
         this.mImageUri = mImageUri;
+    }
+
+    public int getUserId() {
+        return mUserId;
+    }
+
+    public void setUserId(int mUserId) {
+        this.mUserId = mUserId;
     }
 }

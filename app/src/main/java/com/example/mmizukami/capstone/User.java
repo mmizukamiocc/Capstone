@@ -19,7 +19,7 @@ public class User {
         mRealName = "";
         mEmail = "";
         mPhone = "";
-        mPassword = "00000000";
+        mPassword = "";
 
     }
 
@@ -30,6 +30,10 @@ public class User {
         this.mEmail = mEmail;
         this.mPhone = mPhone;
         this.mPassword = mPassword;
+    }
+
+    public int getId() {
+        return mId;
     }
 
     public String getUserName() {
@@ -71,4 +75,6 @@ public class User {
     public void setPassword(String mPassword) {
         this.mPassword = mPassword;
     }
+
+
 }
