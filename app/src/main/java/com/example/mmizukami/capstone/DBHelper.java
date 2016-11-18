@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 
 import java.util.ArrayList;
 
@@ -173,8 +174,118 @@ class DBHelper extends SQLiteOpenHelper {
         return user;
     }
 
+
+
+
     //********** PETS TABLE OPERATIONS:  ADD, GETALL, EDIT, DELETE
+    public void addPet(Pet pet) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        //ADD KEY-VALUE PAIR INFORMATION FOR THE TASK DESCRIPTION
 
 
+        values.put(PETS_USER_ID,pet.getUserId());
+
+        values.put(PETS_FIELD_TYPE,pet.getType());
+
+        values.put(PETS_FIELD_NAME, pet.getPetName());
+
+        values.put(PETS_FIELD_DESCRIPTION,pet.getDescription());
+
+        values.put(PETS_FIELD_ADAPTION,(pet.isAdaption()? 0:1));
+
+        values.put(PETS_FIELD_LOST,(pet.isLost()? 0:1));
+
+        values.put(PETS_FIELD_IMAGE_URI,pet.getImageUri().toString());
+
+        // INSERT THE ROW IN THE TABLE
+        db.insert(PETS_TABLE, null, values);
+
+
+        // CLOSE THE DATABASE CONNECTION
+        db.close();
+    }
+
+    public ArrayList<Pet> getAllPets() {
+        ArrayList<Pet> petsList = new ArrayList<>();
+        SQLiteDatabase database = this.getReadableDatabase();
+        //Cursor cursor = database.rawQuery(queryList, null);
+        Cursor cursor = database.query(
+                PETS_TABLE,
+                new String[]{PETS_KEY_FIELD_ID,PETS_USER_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
+                        PETS_FIELD_ADAPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
+                null,
+                null,
+                null, null, null, null );
+
+        //COLLECT EACH ROW IN THE TABLE
+        if (cursor.moveToFirst()){
+            do {
+                Pet pet = new Pet(cursor.getInt(0), cursor.getInt(1), cursor.getString(2),cursor.getString(3),cursor.getString(4),(cursor.getInt(5) == 1),(cursor.getInt(6) == 1), Uri.parse(cursor.getString(7)));
+                petsList.add(pet);
+            } while (cursor.moveToNext());
+        }
+        return petsList;
+    }
+
+    public void deletePet(Pet pet){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // DELETE THE TABLE ROW
+        db.delete(PETS_TABLE, PETS_KEY_FIELD_ID + " = ?",
+                new String[] {String.valueOf(pet.getId())});
+        db.close();
+    }
+
+    public void deleteAllPets()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(PETS_TABLE, null, null);
+        db.close();
+    }
+
+
+    public void updatePet(Pet pet){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(PETS_USER_ID,pet.getUserId());
+
+        values.put(PETS_FIELD_TYPE,pet.getType());
+
+        values.put(PETS_FIELD_NAME, pet.getPetName());
+
+        values.put(PETS_FIELD_DESCRIPTION,pet.getDescription());
+
+        values.put(PETS_FIELD_ADAPTION,pet.isAdaption() ? 0:1);
+
+        values.put(PETS_FIELD_LOST,pet.isLost() ? 0:1);
+
+        values.put(PETS_FIELD_IMAGE_URI,pet.getImageUri().toString());
+
+        db.update(PETS_TABLE, values, PETS_KEY_FIELD_ID + " = ?",
+                new String[]{String.valueOf(pet.getId())});
+        db.close();
+    }
+
+
+    public Pet getPet(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                PETS_TABLE,
+                new String[]{PETS_KEY_FIELD_ID,PETS_USER_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
+                        PETS_FIELD_ADAPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
+                PETS_KEY_FIELD_ID + "=?",
+                new String[]{String.valueOf(id)},
+                null, null, null, null );
+
+        if (cursor != null)
+            cursor.moveToFirst();
+        Pet pet = new Pet(cursor.getInt(0), cursor.getInt(1), cursor.getString(2),cursor.getString(3),cursor.getString(4),
+                (cursor.getInt(5) == 1),(cursor.getInt(6) == 1), Uri.parse(cursor.getString(7)));
+        db.close();
+        return pet;
+    }
 
 }

@@ -17,8 +17,9 @@ public class Pet {
     private Uri mImageUri;
 
 
-    public Pet(int mId, String mPetName, String mType, String mDescription, boolean mAdaption, boolean mLost, Uri mImageUri) {
+    public Pet(int mId, int mUserId, String mPetName, String mType, String mDescription, boolean mAdaption, boolean mLost, Uri mImageUri) {
         this.mId = mId;
+        this.mUserId = mUserId;
         this.mPetName = mPetName;
         this.mType = mType;
         this.mDescription = mDescription;
@@ -29,6 +30,7 @@ public class Pet {
 
     public Pet() {
         mId = -1;
+        mUserId = -1;
         mType = "none";
         mDescription = "";
         mAdaption = false;
