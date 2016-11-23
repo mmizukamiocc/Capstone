@@ -16,6 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SplashActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SplashActivity" />
         <activity android:name=".PetDetailsActivity" />
         <activity android:name=".AddPetActivity"></activity>
     </application>
