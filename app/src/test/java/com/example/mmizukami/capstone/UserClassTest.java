@@ -18,7 +18,7 @@ public class UserClassTest {
         testUser = new User(9001, "", "", "", "", "");
         testUser.setUserName("CheeseDeluxe");
         testUser.setRealName("Ethan");
-        testUser.setEmail("ethan.quach.10@gmail.com");
+        testUser.setEmail("googolplex1000@gmail.com");
         testUser.setPhone("714-260-7377");
         testUser.setPassword("password");
     }
@@ -45,7 +45,7 @@ public class UserClassTest {
 
     @Test
     public void getEmail() throws Exception {
-        assertEquals("ethan.quach.10@gmail.com", testUser.getEmail());
+        assertEquals("googolplex1000@gmail.com", testUser.getEmail());
     }
 
     @Test
