@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Capstone</string>
     <string name="splash">Pet Protector</string>
-    <string name="password" />
-    <string name="userName" />
+    <string name="password">Password</string>
+    <string name="userName">Username</string>
     <string name="add_pet_text">Add a Pet</string>
     <string name="pet_name">Name of pet</string>
     <string name="pet_type">Type of pet</string>
