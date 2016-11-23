@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Capstone</string>
     <string name="splash">Pet Protector</string>
-    <string name="password" />
-    <string name="userName" />
+    <string name="password">Password</string>
+    <string name="userName">Username</string>
 </resources>
