@@ -20,11 +20,10 @@
         android:id="@+id/userName"
         android:ems="10"
         android:hint="User Name"
-        android:layout_marginBottom="119dp"
+        android:layout_marginBottom="139dp"
+        android:text="@string/userName"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:text="@string/userName" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,4 +36,24 @@
         android:layout_marginTop="50dp"
         android:hint="Password"
         android:text="@string/password" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/loginButton"
+        android:layout_below="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_alignEnd="@+id/password" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Register Here"
+        android:id="@+id/registerHere"
+        android:layout_below="@+id/loginButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

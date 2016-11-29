@@ -17,10 +17,11 @@
         </activity>
         <activity android:name=".SplashActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".PetDetailsActivity" />
-        <activity android:name=".AddPetActivity"></activity>
+        <activity android:name=".AddPetActivity" />
+        <activity android:name=".UserAreaActivity"></activity>
     </application>
 
 </manifest>
