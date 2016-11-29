@@ -9,8 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.mmizukami.capstone.SplashActivity"
-    android:background="@android:color/holo_blue_bright">
+    tools:context="com.example.mmizukami.capstone.SplashActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -31,5 +30,6 @@
         android:text="@string/splash"
         android:gravity="center"
         android:textSize="30sp"
-        android:elevation="13dp" />
+        android:elevation="13dp"
+        android:textColor="@android:color/holo_blue_light" />
 </RelativeLayout>
