@@ -10,14 +10,14 @@
         android:id="@+id/main_backgroundImage"
         android:scaleType="fitCenter"
         android:src="@drawable/cat"
-        android:layout_above="@+id/uaName"
+        android:layout_above="@+id/laName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/uaName"
+        android:id="@+id/laName"
         android:ems="10"
         android:hint="User Name"
         android:layout_marginBottom="139dp"
@@ -30,8 +30,8 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/suPassword"
-        android:layout_alignTop="@+id/uaName"
+        android:id="@+id/laPassword"
+        android:layout_alignTop="@+id/laName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:hint="Password"
@@ -41,19 +41,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:id="@+id/loginButton"
-        android:layout_below="@+id/suPassword"
-        android:layout_alignLeft="@+id/suPassword"
-        android:layout_alignStart="@+id/suPassword"
-        android:layout_alignRight="@+id/suPassword"
-        android:layout_alignEnd="@+id/suPassword" />
+        android:id="@+id/laLoginButton"
+        android:layout_below="@+id/laPassword"
+        android:layout_alignLeft="@+id/laPassword"
+        android:layout_alignStart="@+id/laPassword"
+        android:layout_alignRight="@+id/laPassword"
+        android:layout_alignEnd="@+id/laPassword" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Register Here"
-        android:id="@+id/registerHere"
-        android:layout_below="@+id/loginButton"
+        android:id="@+id/laRegisterHere"
+        android:layout_below="@+id/laLoginButton"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
