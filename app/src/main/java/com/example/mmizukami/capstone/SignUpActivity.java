@@ -12,12 +12,12 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        final EditText userName = (EditText) findViewById(R.id.userName);
-        final EditText password = (EditText) findViewById(R.id.password);
-        final EditText emailAddress = (EditText) findViewById(R.id.emailAddress);
-        final EditText phone = (EditText) findViewById(R.id.phone);
-        final EditText postalAddress = (EditText) findViewById(R.id.postalAddress);
-        final Button register = (Button) findViewById(R.id.register);
+        final EditText userName = (EditText) findViewById(R.id.suName);
+        final EditText password = (EditText) findViewById(R.id.suPassword);
+        final EditText emailAddress = (EditText) findViewById(R.id.suEmailAddress);
+        final EditText phone = (EditText) findViewById(R.id.suUserPhone);
+        final EditText postalAddress = (EditText) findViewById(R.id.suPostalAddress);
+        final Button register = (Button) findViewById(R.id.suRegister);
 
     }
 }

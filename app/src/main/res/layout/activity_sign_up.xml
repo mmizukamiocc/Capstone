@@ -16,62 +16,57 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/userName"
+        android:id="@id/suUserName"
         android:ems="10"
         android:layout_marginTop="33dp"
         android:hint="User Name"
         android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password" />
+        android:layout_alignLeft="@+id/suPassword"
+        android:layout_alignStart="@+id/suPassword" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/password"
+        android:id="@+id/suPassword"
         android:hint="Password"
-        android:layout_below="@+id/userName"
+        android:layout_below="@+id/suUserName"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/name"
+        android:id="@+id/suName"
         android:hint="Name"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/suPassword"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/emailAddress"
+        android:id="@+id/suEmailAddress"
         android:hint="Email"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/suName"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="phone"
         android:ems="10"
-        android:id="@+id/phone"
+        android:id="@+id/suUserPhone"
         android:hint="Phone"
-        android:layout_below="@+id/emailAddress"
+        android:layout_below="@+id/suEmailAddress"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/postalAddress"
+        android:id="@+id/suPostalAddress"
         android:hint="Address"
-        android:layout_below="@+id/phone"
+        android:layout_below="@+id/suUserPhone"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -89,10 +84,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:id="@+id/register"
-        android:layout_below="@+id/postalAddress"
-        android:layout_alignLeft="@+id/postalAddress"
-        android:layout_alignStart="@+id/postalAddress"
-        android:layout_alignRight="@+id/postalAddress"
-        android:layout_alignEnd="@+id/postalAddress" />
+        android:id="@+id/suRegister"
+        android:layout_below="@+id/suPostalAddress"
+        android:layout_alignLeft="@+id/suPostalAddress"
+        android:layout_alignStart="@+id/suPostalAddress"
+        android:layout_alignRight="@+id/suPostalAddress"
+        android:layout_alignEnd="@+id/suPostalAddress" />
+
 </RelativeLayout>
