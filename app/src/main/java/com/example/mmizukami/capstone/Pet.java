@@ -1,12 +1,14 @@
 package com.example.mmizukami.capstone;
 
 import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Created by mmizukami on 11/10/2016.
  */
 
-public class Pet {
+public class Pet implements Parcelable{
     private int mId;
     private int mUserId;
     private String mPetName;
@@ -37,6 +39,29 @@ public class Pet {
         mLost = false;
         mImageUri = null; // set something as Default later
     }
+
+    protected Pet(Parcel in) {
+        mId = in.readInt();
+        mUserId = in.readInt();
+        mPetName = in.readString();
+        mType = in.readString();
+        mDescription = in.readString();
+        mAdaption = in.readByte() != 0;
+        mLost = in.readByte() != 0;
+        mImageUri = in.readParcelable(Uri.class.getClassLoader());
+    }
+
+    public static final Creator<Pet> CREATOR = new Creator<Pet>() {
+        @Override
+        public Pet createFromParcel(Parcel in) {
+            return new Pet(in);
+        }
+
+        @Override
+        public Pet[] newArray(int size) {
+            return new Pet[size];
+        }
+    };
 
     public int getId() {
         return mId;
@@ -96,5 +121,23 @@ public class Pet {
 
     public void setUserId(int mUserId) {
         this.mUserId = mUserId;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(mId);
+        parcel.writeInt(mUserId);
+        parcel.writeString(mPetName);
+        parcel.writeString(mType);
+        parcel.writeString(mDescription);
+        parcel.writeByte((byte) (mAdaption ? 1 : 0));
+        parcel.writeByte((byte) (mLost ? 1 : 0));
+        parcel.writeParcelable(mImageUri, i);
     }
 }
