@@ -28,7 +28,7 @@ import static com.example.mmizukami.capstone.R.id.petTypeEditText;
 /**
  * Created by Ethan on 11/22/2016.
  */
-public class AddPetActivity extends AppCompatActivity {
+//public class AddPetActivity extends AppCompatActivity {
 
     private EditText petNameEntryEditText;
     private Spinner petTypeSpinner;
