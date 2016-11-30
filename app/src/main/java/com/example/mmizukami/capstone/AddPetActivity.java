@@ -7,7 +7,7 @@ import android.widget.EditText;
 /**
  * Created by Ethan on 11/22/2016.
  */
-public class AddPetActivity extends AppCompatActivity {
+//public class AddPetActivity extends AppCompatActivity {
 
     private EditText petNameEntryEditText;
     private EditText petTypeEditText;
