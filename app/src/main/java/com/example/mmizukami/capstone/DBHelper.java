@@ -25,7 +25,7 @@ class DBHelper extends SQLiteOpenHelper {
     private static final String PETS_FIELD_NAME = "pet_name";
     private static final String PETS_FIELD_TYPE = "type";
     private static final String PETS_FIELD_DESCRIPTION = "description";
-    private static final String PETS_FIELD_ADAPTION = "adaption";
+    private static final String PETS_FIELD_ADOPTION = "adoption";
     private static final String PETS_FIELD_LOST = "lost";
     private static final String PETS_FIELD_IMAGE_URI = "imageURI";
 
@@ -61,7 +61,7 @@ class DBHelper extends SQLiteOpenHelper {
                 + PETS_FIELD_NAME + " TEXT, "
                 + PETS_FIELD_TYPE + " TEXT, "
                 + PETS_FIELD_DESCRIPTION + " TEXT, "
-                + PETS_FIELD_ADAPTION + " INTEGER, "
+                + PETS_FIELD_ADOPTION + " INTEGER, "
                 + PETS_FIELD_LOST + " INTEGER, "
                 + PETS_FIELD_IMAGE_URI + " TEXT, "
                 + "FOREIGN KEY(" +PETS_USER_ID +") REFERENCES "
@@ -193,7 +193,7 @@ class DBHelper extends SQLiteOpenHelper {
 
         values.put(PETS_FIELD_DESCRIPTION,pet.getDescription());
 
-        values.put(PETS_FIELD_ADAPTION,(pet.isAdaption()? 0:1));
+        values.put(PETS_FIELD_ADOPTION,(pet.isAdopted()? 0:1));
 
         values.put(PETS_FIELD_LOST,(pet.isLost()? 0:1));
 
@@ -214,7 +214,7 @@ class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = database.query(
                 PETS_TABLE,
                 new String[]{PETS_KEY_FIELD_ID,PETS_USER_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
-                        PETS_FIELD_ADAPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
+                        PETS_FIELD_ADOPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
                 null,
                 null,
                 null, null, null, null );
@@ -258,7 +258,7 @@ class DBHelper extends SQLiteOpenHelper {
 
         values.put(PETS_FIELD_DESCRIPTION,pet.getDescription());
 
-        values.put(PETS_FIELD_ADAPTION,pet.isAdaption() ? 0:1);
+        values.put(PETS_FIELD_ADOPTION,pet.isAdopted() ? 0:1);
 
         values.put(PETS_FIELD_LOST,pet.isLost() ? 0:1);
 
@@ -275,7 +275,7 @@ class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(
                 PETS_TABLE,
                 new String[]{PETS_KEY_FIELD_ID,PETS_USER_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
-                        PETS_FIELD_ADAPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
+                        PETS_FIELD_ADOPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
                 PETS_KEY_FIELD_ID + "=?",
                 new String[]{String.valueOf(id)},
                 null, null, null, null );

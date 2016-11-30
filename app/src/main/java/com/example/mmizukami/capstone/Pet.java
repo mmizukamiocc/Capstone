@@ -14,18 +14,17 @@ public class Pet implements Parcelable{
     private String mPetName;
     private String mType;
     private String mDescription;
-    private boolean mAdaption;
+    private boolean mAdoption;
     private boolean mLost;
     private Uri mImageUri;
 
-
-    public Pet(int mId, int mUserId, String mPetName, String mType, String mDescription, boolean mAdaption, boolean mLost, Uri mImageUri) {
+    public Pet(int mId, int mUserId, String mPetName, String mType, String mDescription, boolean mAdoption, boolean mLost, Uri mImageUri) {
         this.mId = mId;
         this.mUserId = mUserId;
         this.mPetName = mPetName;
         this.mType = mType;
         this.mDescription = mDescription;
-        this.mAdaption = mAdaption;
+        this.mAdoption = mAdoption;
         this.mLost = mLost;
         this.mImageUri = mImageUri;
     }
@@ -35,9 +34,20 @@ public class Pet implements Parcelable{
         mUserId = -1;
         mType = "none";
         mDescription = "";
-        mAdaption = false;
+        mAdoption = false;
         mLost = false;
         mImageUri = null; // set something as Default later
+    }
+
+    public Pet(String mPetName, String mType, String mDescription, boolean mAdoption, boolean mLost, Uri mImageUri) {
+        mId = -1;
+        mUserId = -1;
+        this.mPetName = mPetName;
+        this.mType = mType;
+        this.mDescription = mDescription;
+        this.mAdoption = mAdoption;
+        this.mLost = mLost;
+        this.mImageUri = mImageUri;
     }
 
     protected Pet(Parcel in) {
@@ -46,7 +56,7 @@ public class Pet implements Parcelable{
         mPetName = in.readString();
         mType = in.readString();
         mDescription = in.readString();
-        mAdaption = in.readByte() != 0;
+        mAdoption = in.readByte() != 0;
         mLost = in.readByte() != 0;
         mImageUri = in.readParcelable(Uri.class.getClassLoader());
     }
@@ -91,12 +101,12 @@ public class Pet implements Parcelable{
         this.mDescription = mDescription;
     }
 
-    public boolean isAdaption() {
-        return mAdaption;
+    public boolean isAdopted() {
+        return mAdoption;
     }
 
-    public void setAdaption(boolean mAdaption) {
-        this.mAdaption = mAdaption;
+    public void setAdoption(boolean mAdoption) {
+        this.mAdoption = mAdoption;
     }
 
     public boolean isLost() {
@@ -136,7 +146,7 @@ public class Pet implements Parcelable{
         parcel.writeString(mPetName);
         parcel.writeString(mType);
         parcel.writeString(mDescription);
-        parcel.writeByte((byte) (mAdaption ? 1 : 0));
+        parcel.writeByte((byte) (mAdoption ? 1 : 0));
         parcel.writeByte((byte) (mLost ? 1 : 0));
         parcel.writeParcelable(mImageUri, i);
     }
