@@ -17,7 +17,7 @@ class DBHelper extends SQLiteOpenHelper {
 
     private static final String PETS_TABLE = "Pets";
     private static final String USERS_TABLE = "Users";
-
+    private static final String RELATIONS_TABLE = "Relations";
 
     //TASK 2: DEFINE THE FIELDS (COLUMN NAMES) FOR THE TABLE
     private static final String PETS_KEY_FIELD_ID = "id";
@@ -35,6 +35,9 @@ class DBHelper extends SQLiteOpenHelper {
     private static final String USERS_FIELD_EMAIL = "email";
     private static final String USERS_FIELD_PHONE = "phone";
     private static final String USERS_FIELD_PASSWORD = "password";
+
+    private static final String RELATIONS_KEY_FIELD_ID = "id";
+
 
 
 
@@ -68,6 +71,7 @@ class DBHelper extends SQLiteOpenHelper {
                 + USERS_TABLE + "(" +USERS_KEY_FIELD_ID + ")";
         database.execSQL (createQuery);
 
+        createQuery = "CREATE TABLE " +
 
     }
 
@@ -193,7 +197,7 @@ class DBHelper extends SQLiteOpenHelper {
 
         values.put(PETS_FIELD_DESCRIPTION,pet.getDescription());
 
-        values.put(PETS_FIELD_ADAPTION,(pet.isAdaption()? 0:1));
+        values.put(PETS_FIELD_ADAPTION,(pet.isAdopted()? 0:1));
 
         values.put(PETS_FIELD_LOST,(pet.isLost()? 0:1));
 
@@ -258,7 +262,7 @@ class DBHelper extends SQLiteOpenHelper {
 
         values.put(PETS_FIELD_DESCRIPTION,pet.getDescription());
 
-        values.put(PETS_FIELD_ADAPTION,pet.isAdaption() ? 0:1);
+        values.put(PETS_FIELD_ADAPTION,pet.isAdopted() ? 0:1);
 
         values.put(PETS_FIELD_LOST,pet.isLost() ? 0:1);
 

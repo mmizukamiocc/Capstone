@@ -15,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -23,12 +24,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import static com.example.mmizukami.capstone.R.id.petTypeEditText;
-
 /**
  * Created by Ethan on 11/22/2016.
  */
-//public class AddPetActivity extends AppCompatActivity {
+public class AddPetActivity extends AppCompatActivity {
 
     private EditText petNameEntryEditText;
     private Spinner petTypeSpinner;
@@ -45,16 +44,16 @@ import static com.example.mmizukami.capstone.R.id.petTypeEditText;
         setContentView(R.layout.activity_add_pet);
 
         petNameEntryEditText = (EditText) findViewById(R.id.petNameEntryEditText);
-        petTypeSpinner = (Spinner) findViewById(petTypeSpinner);
-
-        /*
-        I intend to change petTypeEditText to a Spinner with some preset categories.
-        Some of these categories include dog, cat, fish, rodent, lizard, and other.
-        */
-
+        petTypeSpinner = (Spinner) findViewById(R.id.petTypeSpinner);
         petDescriptionEditText = (EditText) findViewById(R.id.petDescriptionEditText);
         petImageSelectImageView = (ImageView) findViewById(R.id.petImageSelectImageView);
         isAdoptedCheckBox = (CheckBox) findViewById(R.id.isAdoptedCheckBox);
+
+        // Setup for petTypeSpinner
+        ArrayAdapter<String> petTypeSpinnerAdapter =
+                new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,
+                        getResources().getStringArray(R.array.pet_types_array));
+        petTypeSpinner.setAdapter(petTypeSpinnerAdapter);
 
         // Setup for petImageSelectImageView
         imageURI = getUriToResource(this, R.drawable.dog);
@@ -116,19 +115,33 @@ import static com.example.mmizukami.capstone.R.id.petTypeEditText;
                 + '/' + res.getResourceEntryName(resId));
     }
 
-
     public void onNextClick (View view) {
 
         if (petNameEntryEditText.getText().toString().equals("") ||
-                petTypeEditText.getText().toString().equals("") ||
                 petDescriptionEditText.getText().toString().equals("")) {
 
             Toast.makeText(this, "Please fill out all fields!", Toast.LENGTH_SHORT).show();
         }
+        else if (imageURI == getUriToResource(this, R.drawable.dog))
+        {
+
+        }
         else {
             // TODO: What am I doing with this data?
+            Pet intentPet = new Pet ( petNameEntryEditText.getText().toString(),
+                    petTypeSpinner.getSelectedItem().toString(),
+                    petDescriptionEditText.getText().toString(),
+                    isAdoptedCheckBox.isChecked(),
+                    false,
+                    imageURI
+            );
             // Use alternative constructor for Pet():
-            // (String mPetName, String mType,
+            // (String mPetName, String mType, String mDescription, mType = "none";
+            /*
+            mDescription = "";
+            mAdoption = false;
+            mLost = false;
+            mImageUri = null; */
         }
 
     }

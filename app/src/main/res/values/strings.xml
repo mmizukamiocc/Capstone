@@ -19,4 +19,13 @@
     <string name="name_placeholder">&lt;name goes here&gt;</string>
     <string name="desc_placeholder">&lt;description goes here&gt;</string>
     <string name="status_placeholder">&lt;status goes here&gt;</string>
+
+    <string-array name="pet_types_array">
+        <item>Dog</item>
+        <item>Cat</item>
+        <item>Small Mammal</item>
+        <item>Fish</item>
+        <item>Bird</item>
+        <item>Reptile</item>
+    </string-array>
 </resources>
