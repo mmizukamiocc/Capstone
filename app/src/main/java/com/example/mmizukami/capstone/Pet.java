@@ -10,7 +10,6 @@ import android.os.Parcelable;
 
 public class Pet implements Parcelable{
     private int mId;
-    private int mUserId;
     private String mPetName;
     private String mType;
     private String mDescription;
@@ -19,9 +18,9 @@ public class Pet implements Parcelable{
     private Uri mImageUri;
 
 
-    public Pet(int mId, int mUserId, String mPetName, String mType, String mDescription, boolean mAdaption, boolean mLost, Uri mImageUri) {
+    public Pet(int mId,  String mPetName, String mType, String mDescription, boolean mAdaption, boolean mLost, Uri mImageUri) {
         this.mId = mId;
-        this.mUserId = mUserId;
+
         this.mPetName = mPetName;
         this.mType = mType;
         this.mDescription = mDescription;
@@ -32,7 +31,7 @@ public class Pet implements Parcelable{
 
     public Pet() {
         mId = -1;
-        mUserId = -1;
+
         mType = "none";
         mDescription = "";
         mAdaption = false;
@@ -42,7 +41,7 @@ public class Pet implements Parcelable{
 
     protected Pet(Parcel in) {
         mId = in.readInt();
-        mUserId = in.readInt();
+
         mPetName = in.readString();
         mType = in.readString();
         mDescription = in.readString();
@@ -115,13 +114,6 @@ public class Pet implements Parcelable{
         this.mImageUri = mImageUri;
     }
 
-    public int getUserId() {
-        return mUserId;
-    }
-
-    public void setUserId(int mUserId) {
-        this.mUserId = mUserId;
-    }
 
 
     @Override
@@ -132,7 +124,6 @@ public class Pet implements Parcelable{
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(mId);
-        parcel.writeInt(mUserId);
         parcel.writeString(mPetName);
         parcel.writeString(mType);
         parcel.writeString(mDescription);

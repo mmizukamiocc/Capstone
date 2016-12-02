@@ -21,7 +21,7 @@ class DBHelper extends SQLiteOpenHelper {
 
     //TASK 2: DEFINE THE FIELDS (COLUMN NAMES) FOR THE TABLE
     private static final String PETS_KEY_FIELD_ID = "id";
-    private static final String PETS_USER_ID = "user_id";
+    //private static final String PETS_USER_ID = "user_id";
     private static final String PETS_FIELD_NAME = "pet_name";
     private static final String PETS_FIELD_TYPE = "type";
     private static final String PETS_FIELD_DESCRIPTION = "description";
@@ -57,14 +57,14 @@ class DBHelper extends SQLiteOpenHelper {
 
         createQuery = "CREATE TABLE " + PETS_TABLE + "("
                 + PETS_KEY_FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + PETS_USER_ID + " INTEGER, "
+                //+ PETS_USER_ID + " INTEGER, "
                 + PETS_FIELD_NAME + " TEXT, "
                 + PETS_FIELD_TYPE + " TEXT, "
                 + PETS_FIELD_DESCRIPTION + " TEXT, "
                 + PETS_FIELD_ADAPTION + " INTEGER, "
                 + PETS_FIELD_LOST + " INTEGER, "
                 + PETS_FIELD_IMAGE_URI + " TEXT, "
-                + "FOREIGN KEY(" +PETS_USER_ID +") REFERENCES "
+              //  + "FOREIGN KEY(" +PETS_USER_ID +") REFERENCES "
                 + USERS_TABLE + "(" +USERS_KEY_FIELD_ID + ")";
         database.execSQL (createQuery);
 
@@ -185,7 +185,7 @@ class DBHelper extends SQLiteOpenHelper {
         //ADD KEY-VALUE PAIR INFORMATION FOR THE TASK DESCRIPTION
 
 
-        values.put(PETS_USER_ID,pet.getUserId());
+        //values.put(PETS_USER_ID,pet.getUserId());
 
         values.put(PETS_FIELD_TYPE,pet.getType());
 
@@ -213,7 +213,7 @@ class DBHelper extends SQLiteOpenHelper {
         //Cursor cursor = database.rawQuery(queryList, null);
         Cursor cursor = database.query(
                 PETS_TABLE,
-                new String[]{PETS_KEY_FIELD_ID,PETS_USER_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
+                new String[]{PETS_KEY_FIELD_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
                         PETS_FIELD_ADAPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
                 null,
                 null,
@@ -222,7 +222,7 @@ class DBHelper extends SQLiteOpenHelper {
         //COLLECT EACH ROW IN THE TABLE
         if (cursor.moveToFirst()){
             do {
-                Pet pet = new Pet(cursor.getInt(0), cursor.getInt(1), cursor.getString(2),cursor.getString(3),cursor.getString(4),(cursor.getInt(5) == 1),(cursor.getInt(6) == 1), Uri.parse(cursor.getString(7)));
+                Pet pet = new Pet(cursor.getInt(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),(cursor.getInt(4) == 1),(cursor.getInt(5) == 1), Uri.parse(cursor.getString(6)));
                 petsList.add(pet);
             } while (cursor.moveToNext());
         }
@@ -250,7 +250,7 @@ class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(PETS_USER_ID,pet.getUserId());
+        //values.put(PETS_USER_ID,pet.getUserId());
 
         values.put(PETS_FIELD_TYPE,pet.getType());
 
@@ -274,7 +274,7 @@ class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(
                 PETS_TABLE,
-                new String[]{PETS_KEY_FIELD_ID,PETS_USER_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
+                new String[]{PETS_KEY_FIELD_ID, PETS_FIELD_TYPE,PETS_FIELD_NAME, PETS_FIELD_DESCRIPTION,
                         PETS_FIELD_ADAPTION,PETS_FIELD_LOST,PETS_FIELD_IMAGE_URI},
                 PETS_KEY_FIELD_ID + "=?",
                 new String[]{String.valueOf(id)},
@@ -282,8 +282,8 @@ class DBHelper extends SQLiteOpenHelper {
 
         if (cursor != null)
             cursor.moveToFirst();
-        Pet pet = new Pet(cursor.getInt(0), cursor.getInt(1), cursor.getString(2),cursor.getString(3),cursor.getString(4),
-                (cursor.getInt(5) == 1),(cursor.getInt(6) == 1), Uri.parse(cursor.getString(7)));
+        Pet pet = new Pet(cursor.getInt(0), cursor.getString(1),cursor.getString(2),cursor.getString(3),
+                (cursor.getInt(4) == 1),(cursor.getInt(5) == 1), Uri.parse(cursor.getString(6)));
         db.close();
         return pet;
     }

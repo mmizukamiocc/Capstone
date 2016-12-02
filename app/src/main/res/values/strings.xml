@@ -4,6 +4,8 @@
     <string name="password">Password</string>
     <string name="userName">Username</string>
     <string name="add_pet_text">Add a Pet</string>
+    <string name="login_button">Log in</string>
+    <string name="sign_up_button">Sign up</string>
     <string name="pet_name">Name of pet</string>
     <string name="pet_type">Type of pet</string>
     <string name="pet_desc">Description of pet</string>
