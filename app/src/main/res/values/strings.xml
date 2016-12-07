@@ -2,7 +2,7 @@
     <string name="app_name">Capstone</string>
     <string name="splash">Pet Protector</string>
     <string name="password">Password</string>
-    <string name="userName">Username</string>
+    <string name="userName">UserName</string>
     <string name="add_pet_text">Add a Pet</string>
     <string name="login_button">Log in</string>
     <string name="sign_up_button">Sign up</string>
@@ -18,4 +18,12 @@
     <string name="name_placeholder">&lt;name goes here&gt;</string>
     <string name="desc_placeholder">&lt;description goes here&gt;</string>
     <string name="status_placeholder">&lt;status goes here&gt;</string>
+
+    // sms
+    <string name="add_contacts_button_text">Add Contacts...</string>
+    <string name="send_text_message_button_text">Send Text Message</string>
+    <string name="text_message_hint">Enter text message here...</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email Address</string>
 </resources>
