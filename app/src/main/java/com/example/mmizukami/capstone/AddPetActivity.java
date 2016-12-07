@@ -61,6 +61,7 @@ public class AddPetActivity extends AppCompatActivity {
 
     }
 
+
     public void selectPetImage (View view) {
 
         ArrayList<String> permissionsList = new ArrayList<>();
