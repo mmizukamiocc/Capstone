@@ -34,6 +34,14 @@ public class User implements Parcelable{
         this.mPhone = mPhone;
         this.mPassword = mPassword;
     }
+    public User(String mUserName, String mRealName, String mEmail, String mPhone, String mPassword) {
+        this.mId = -1;
+        this.mUserName = mUserName;
+        this.mRealName = mRealName;
+        this.mEmail = mEmail;
+        this.mPhone = mPhone;
+        this.mPassword = mPassword;
+    }
 
     protected User(Parcel in) {
         mId = in.readInt();

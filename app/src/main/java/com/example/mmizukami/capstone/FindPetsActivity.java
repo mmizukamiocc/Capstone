@@ -57,6 +57,40 @@ public class FindPetsActivity extends AppCompatActivity {
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+            switch(i)
+            {
+                case 0:
+                    filteredPetList.delete();
+                    filteredPetList = new ArrayList<>(allPets);
+
+                    break;
+
+                case 1:
+
+                    for(Pet singlePet : filteredPetList)
+                    {
+                        if(!singlePet.isAdoption())
+                            filterdPetList.remove(singlePet);
+                    }
+
+                    break;
+
+                case 2:
+                    for(Pet singlePet : filteredPetList)
+                    {
+                        if(!singlePet.isLost())
+                            filterdPetList.remove(singlePet);
+                    }
+
+                    break;
+
+                case 3:
+
+
+
+                    break;
+            }
+
         }
 
         @Override
