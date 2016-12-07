@@ -20,7 +20,6 @@ public class PetTest {
     public void setUp() throws Exception
     {
         mPet = new Pet();
-        mPet.setUserId(123456789);
         mPet.setPetName("TestPetName");
         mPet.setType("TestType");
         mPet.setDescription("TestDescription");
@@ -67,10 +66,6 @@ public class PetTest {
         assertEquals(sampleURI,mPet.getImageUri());
     }
 
-    @Test
-    public void getUserId() throws Exception {
-        assertEquals(123456789,mPet.getUserId());
-    }
 
 
 }

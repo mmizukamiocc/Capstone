@@ -12,7 +12,8 @@
     <string name="enter_name">Enter name here...</string>
     <string name="enter_type">Enter type here...</string>
     <string name="enter_desc">Enter description here...</string>
-    <string name="pet_status">Status:</string>
+    <string name="pet_find">Find My Pet</string>
+    <string name="pet_adoption">Pet Adoption</string>
     <string name="next">Next</string>
     <string name="name_placeholder">&lt;name goes here&gt;</string>
     <string name="desc_placeholder">&lt;description goes here&gt;</string>

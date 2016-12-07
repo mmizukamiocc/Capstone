@@ -1,13 +1,15 @@
 package com.example.mmizukami.capstone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 
 /**
  * Created by Ethan on 11/22/2016.
  */
-//public class AddPetActivity extends AppCompatActivity {
+public class AddPetActivity extends AppCompatActivity {
 
     private EditText petNameEntryEditText;
     private EditText petTypeEditText;
@@ -30,7 +32,7 @@ import android.widget.EditText;
 
     }
 
-    /*
+
     public void onNextClick (View view) {
 
         // TODO: Add case for when fields are not filled out.
@@ -49,5 +51,5 @@ import android.widget.EditText;
             startActivity(addPetContinueIntent);
         }
     }
-    */
+
 }

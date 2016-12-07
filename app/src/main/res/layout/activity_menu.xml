@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
         android:text="Add Pet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button5" />
+        android:id="@+id/addButton" />
 
     <Button
-        android:text="Find My Pet"
+        android:text= "@string/pet_find"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button4" />
+        android:id="@+id/findButton" />
 
     <Button
-        android:text="Pet Adoption"
+        android:text= ""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button3" />
