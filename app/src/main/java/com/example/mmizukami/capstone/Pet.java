@@ -18,7 +18,7 @@ public class Pet implements Parcelable{
     private Uri mImageUri;
 
 
-    public Pet(int mId,  String mPetName, String mType, String mDescription, boolean mAdaption, boolean mLost, Uri mImageUri) {
+    public Pet(int mId,  String mPetName, String mType, String mDescription, boolean mAdoption, boolean mLost, Uri mImageUri) {
         this.mId = mId;
 
         this.mPetName = mPetName;

@@ -128,20 +128,12 @@ public class AddPetActivity extends AppCompatActivity {
         }
         else {
             // TODO: What am I doing with this data?
-            Pet intentPet = new Pet ( petNameEntryEditText.getText().toString(),
+            Pet petToAdd = new Pet (petNameEntryEditText.getText().toString(),
                     petTypeSpinner.getSelectedItem().toString(),
                     petDescriptionEditText.getText().toString(),
                     isAdoptedCheckBox.isChecked(),
                     false,
-                    imageURI
-            );
-            // Use alternative constructor for Pet():
-            // (String mPetName, String mType, String mDescription, mType = "none";
-            /*
-            mDescription = "";
-            mAdoption = false;
-            mLost = false;
-            mImageUri = null; */
+                    imageURI);
         }
 
     }

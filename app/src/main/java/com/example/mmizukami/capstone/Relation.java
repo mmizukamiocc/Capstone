@@ -7,11 +7,38 @@ import android.os.Parcelable;
  * Created by Ethan on 12/1/2016.
  */
 
-// TODO: Send a text message to Mahiro when finished!
-
 public class Relation implements Parcelable {
 
+    private int relationId;
+    private Pet mPet;
+    private User mUser;
+
+    public Relation(int relation, Pet petToAdd, User userToAdd) {
+        relationId = relation;
+        mPet = petToAdd;
+        mUser = userToAdd;
+    }
+
+    public Pet getPet() {
+        return mPet;
+    }
+
+    public User getUser() {
+        return mUser;
+    }
+
+    public void setPet(Pet pet) {
+        mPet = pet;
+    }
+
+    public void setUser(User user) {
+        mUser = user;
+    }
+
     protected Relation(Parcel in) {
+        relationId = in.readInt();
+        mPet = in.readParcelable(Pet.class.getClassLoader());
+        mUser = in.readParcelable(User.class.getClassLoader());
     }
 
     public static final Creator<Relation> CREATOR = new Creator<Relation>() {
@@ -33,5 +60,8 @@ public class Relation implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(relationId);
+        parcel.writeParcelable(mPet, 0);
+        parcel.writeParcelable(mUser, 0);
     }
 }
