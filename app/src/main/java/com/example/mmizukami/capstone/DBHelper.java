@@ -20,6 +20,7 @@ class DBHelper extends SQLiteOpenHelper {
     //private static final String SMS_TABLE = "SMSSender";
     private static final String RELATIONS_TABLE = "Relations";
 
+
     //TASK 2: DEFINE THE FIELDS (COLUMN NAMES) FOR THE TABLE
     private static final String PETS_KEY_FIELD_ID = "id";
     //private static final String PETS_USER_ID = "user_id";
