@@ -17,8 +17,7 @@ class DBHelper extends SQLiteOpenHelper {
 
     private static final String PETS_TABLE = "Pets";
     private static final String USERS_TABLE = "Users";
-    private static final String SMS_TABLE = "SMSSender";
-
+    //private static final String SMS_TABLE = "SMSSender";
     private static final String RELATIONS_TABLE = "Relations";
 
     //TASK 2: DEFINE THE FIELDS (COLUMN NAMES) FOR THE TABLE
@@ -39,10 +38,11 @@ class DBHelper extends SQLiteOpenHelper {
     private static final String USERS_FIELD_PASSWORD = "password";
 
     private static final String RELATIONS_KEY_FIELD_ID = "id";
-    private static final String RELATIONS_FIELD_PET = "pet";
-    private static final String RELATIONS_FIELD_USER = "user";
+    private static final String RELATIONS_FIELD_PET_ID = "pet";
+    private static final String RELATIONS_FIELD_USER_ID = "user";
 
-
+    // TODO: Rename these variables.
+    // TODO: Hint: You'll want to use CTRL+F and replace all at the same time.
     private static final String DATABASE_TABLE = "Contacts";
     private static final String KEY_FIELD_ID = "id";
     private static final String FIELD_NAME = "name";
@@ -82,10 +82,15 @@ class DBHelper extends SQLiteOpenHelper {
 
         createQuery = "CREATE TABLE " + RELATIONS_TABLE + "("
                 + RELATIONS_KEY_FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + RELATIONS_FIELD_PET + " TEXT, "
-                + RELATIONS_FIELD_USER + " TEXT" + ")";
-
+                + RELATIONS_FIELD_PET_ID + " INTEGER, "
+                + RELATIONS_FIELD_USER_ID + " INTEGER"
+                + "FOREIGN KEY(" + RELATIONS_FIELD_PET_ID + " REFERENCES "
+                + PETS_TABLE + "(" + PETS_KEY_FIELD_ID + "), "
+                + "FOREIGN KEY(" + RELATIONS_FIELD_USER_ID + " REFERENCES "
+                + USERS_TABLE + "(" + USERS_KEY_FIELD_ID + ")"
+                + ")";
         database.execSQL(createQuery);
+
         createQuery = "CREATE TABLE " + DATABASE_TABLE + " ("
                 + KEY_FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + FIELD_NAME + " TEXT, "
@@ -101,6 +106,7 @@ class DBHelper extends SQLiteOpenHelper {
                           int newVersion) {
         database.execSQL("DROP TABLE IF EXISTS " + USERS_TABLE);
         database.execSQL("DROP TABLE IF EXISTS " + PETS_TABLE);
+        database.execSQL("DROP TABLE IF EXISTS " + RELATIONS_TABLE);
         database.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
 
         onCreate(database);
@@ -312,6 +318,48 @@ class DBHelper extends SQLiteOpenHelper {
         return pet;
     }
 
+    //********** RELATIONS TABLE OPERATIONS: ADD, GETALL, GET 1, DELETE
+
+    public void addRelation (Relation r) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(RELATIONS_FIELD_PET_ID, r.getPet().getId());
+        values.put(RELATIONS_FIELD_USER_ID, r.getUser().getId());
+
+        db.insert(RELATIONS_TABLE, null, values);
+        db.close();
+    }
+
+    public ArrayList<Relation> getAllRelations() {
+        ArrayList<Relation> relationsList = new ArrayList<Relation>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                RELATIONS_TABLE,
+                new String[] {RELATIONS_KEY_FIELD_ID, RELATIONS_FIELD_PET_ID, RELATIONS_FIELD_USER_ID},
+                null,
+                null,
+                null, null, null, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                int id = cursor.getInt(0);
+                Pet p = getPet(cursor.getInt(1));
+                User u = getUser(cursor.getInt(2));
+                Relation r = new Relation(id, p, u);
+
+                relationsList.add(r);
+            } while (cursor.moveToNext());
+        }
+        return relationsList;
+    }
+
+    public void deleteRelation(int target) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(RELATIONS_TABLE, RELATIONS_KEY_FIELD_ID + " = ?",
+                new String[]{String.valueOf(target)});
+        db.close();
+    }
 
     //********** SMS TABLE OPERATIONS:  ADD, GET ALL, GET 1, DELETE
 
