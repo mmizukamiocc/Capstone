@@ -1,20 +1,43 @@
 package com.example.mmizukami.capstone;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class UserAreaActivity extends AppCompatActivity {
+
+    User userArea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
 
-        EditText uaUserName = (EditText) findViewById(R.id.uaName);
-        EditText uaEmailAddress = (EditText) findViewById(R.id.uaEmailAddress);
-        EditText uaPhone = (EditText) findViewById(R.id.uaPhone);
-        EditText uaAddress = (EditText) findViewById(R.id.uaAddress);
+        final EditText uaUserName = (EditText) findViewById(R.id.uaUserName);
+        final EditText uaName = (EditText) findViewById(R.id.uaName);
+        final EditText uaEmailAddress = (EditText) findViewById(R.id.uaEmailAddress);
+        final EditText uaPhone = (EditText) findViewById(R.id.uaPhone);
+        //final EditText uaAddress = (EditText) findViewById(R.id.uaAddress);
+        final TextView uaWelcomeMessage = (TextView) findViewById(R.id.uaWelcomeMessage);
+
+        Intent userAreaIntent = getIntent();
+        userArea = userAreaIntent.getParcelableExtra("User");
+
+        String username = userAreaIntent.getStringExtra("username");
+        String name = userAreaIntent.getStringExtra("real_name");
+        String email = userAreaIntent.getStringExtra("email");
+        String phone = userAreaIntent.getStringExtra("phone");
+        //String address = intent.getStringExtra("address);
+
+        String message = name + " welcome to your user area.";
+        uaWelcomeMessage.setText(message);
+        uaUserName.setText(username);
+        uaName.setText(name);
+        uaEmailAddress.setText(email);
+        uaPhone.setText(phone);
+        //uaAddress.setText(address);
 
     }
 }

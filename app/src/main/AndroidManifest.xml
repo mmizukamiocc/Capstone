@@ -22,7 +22,8 @@
         <activity android:name=".AddPetActivity" />
         <activity android:name=".UserAreaActivity" />
         <activity android:name=".FindPetsActivity" />
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".MessageActivity"></activity>
     </application>
 
 </manifest>
