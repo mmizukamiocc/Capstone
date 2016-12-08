@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        registerHere.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -65,6 +64,16 @@ public class LoginActivity extends AppCompatActivity {
 
             }
 
+        });
+
+
+        registerHere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+
+            }
         });
     }
 }

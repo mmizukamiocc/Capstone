@@ -3,6 +3,8 @@ package com.example.mmizukami.capstone;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,12 +22,13 @@ public class FindPetsActivity extends AppCompatActivity {
     private List<Pet> allPets;
     private User user;
     private List<Pet> filteredPetList;
+    private List<Relation> allRelations;
 
     private EditText findTypeEditText;
     private Spinner choiceSpinner;
     private ListView petsListView;
 
-    FindPetListAdapter findPetListAdapter;
+    private FindPetListAdapter findPetListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class FindPetsActivity extends AppCompatActivity {
         db.getReadableDatabase();
         String[] choice = new String[] {"What you find?","Adoption","Lost","My Pet"};
         allPets = db.getAllPets();
+        allRelations = db.getAllRelations();
         user =  userIntent.getParcelableExtra("User");
 
         filteredPetList = new ArrayList<>(allPets);
@@ -50,6 +54,43 @@ public class FindPetsActivity extends AppCompatActivity {
         db.close();
 
     }
+
+    public void viewPetDetail(View view)
+    {
+        Intent detailIntent = new Intent(FindPetsActivity.this,PetDetailsActivity.class);
+        Pet pet = (Pet) view.getTag();
+        detailIntent.putExtra("Pet",pet);
+        detailIntent.putExtra("User",user);
+        startActivity(detailIntent);
+    }
+
+    public TextWatcher findTypeTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String input = charSequence.toString().toLowerCase();
+
+            if(!input.equals(""))
+            {
+                for(Pet pet: allPets)
+                {
+                    if(!pet.getType().toLowerCase().contains(input))
+                        findPetListAdapter.remove(pet);
+
+                }
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
+
 
     public AdapterView.OnItemSelectedListener choiceSpinnerListener  = new AdapterView.OnItemSelectedListener()
     {
@@ -94,13 +135,20 @@ public class FindPetsActivity extends AppCompatActivity {
                     break;
 
                 case 3:
-
-
+                for(Relation singleRelation: allRelations) {
+                  if(!(singleRelation.getUser() == user))
+                  {
+                      filteredPetList.remove(singleRelation.getPet());
+                      findPetListAdapter.remove(singleRelation.getPet());
+                  }
+                }
 
                     break;
             }
 
         }
+
+
 
         @Override
         public void onNothingSelected(AdapterView<?> adapterView) {
