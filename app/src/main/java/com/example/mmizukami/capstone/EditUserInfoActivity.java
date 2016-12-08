@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditUserInfoActivity extends AppCompatActivity {
 
@@ -35,14 +36,33 @@ public class EditUserInfoActivity extends AppCompatActivity {
         euiEmailAddress.setText(email);
         euiPhone.setText(phone);
         euiPassword.setText(password);
-
-        euiUpdate.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                userUpdate.setRealName(euiName.getText().toString());
-                userUpdate.setEmail(euiEmailAddress.getText().toString());
-                userUpdate.setPhone(euiPhone.getText().toString());
-                userUpdate.setPassword(euiPassword.getText().toString());
+        if (userUpdate.getPassword() == password)
+        {
+            if (euiName.getText().toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter a name.", Toast.LENGTH_SHORT).show();
+                return;
             }
-        });
+            else if (euiEmailAddress.getText().toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter a email address.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            else if (euiPhone.getText().toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter a phone number.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            euiUpdate.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    userUpdate.setRealName(euiName.getText().toString());
+                    userUpdate.setEmail(euiEmailAddress.getText().toString());
+                    userUpdate.setPhone(euiPhone.getText().toString());
+                    userUpdate.setPassword(euiPassword.getText().toString());
+                }
+            });
+        }
+        else
+        {
+            Toast.makeText(this, password + " is Incorrect",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 }
