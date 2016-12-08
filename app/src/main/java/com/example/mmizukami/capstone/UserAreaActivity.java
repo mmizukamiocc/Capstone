@@ -1,8 +1,10 @@
 package com.example.mmizukami.capstone;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,7 +21,7 @@ public class UserAreaActivity extends AppCompatActivity {
         final EditText uaName = (EditText) findViewById(R.id.uaName);
         final EditText uaEmailAddress = (EditText) findViewById(R.id.uaEmailAddress);
         final EditText uaPhone = (EditText) findViewById(R.id.uaPhone);
-        //final EditText uaAddress = (EditText) findViewById(R.id.uaAddress);
+        final Button uaEdit = (Button) findViewById(R.id.uaEdit);
         final TextView uaWelcomeMessage = (TextView) findViewById(R.id.uaWelcomeMessage);
 
         Intent userAreaIntent = getIntent();
@@ -29,7 +31,6 @@ public class UserAreaActivity extends AppCompatActivity {
         String name = userAreaIntent.getStringExtra("real_name");
         String email = userAreaIntent.getStringExtra("email");
         String phone = userAreaIntent.getStringExtra("phone");
-        //String address = intent.getStringExtra("address);
 
         String message = name + " welcome to your user area.";
         uaWelcomeMessage.setText(message);
@@ -37,7 +38,13 @@ public class UserAreaActivity extends AppCompatActivity {
         uaName.setText(name);
         uaEmailAddress.setText(email);
         uaPhone.setText(phone);
-        //uaAddress.setText(address);
 
+        uaEdit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent editIntent = new Intent(UserAreaActivity.this, EditUserInfoActivity.class);
+                editIntent.putExtra("User", userArea);
+                startActivity(editIntent);
+            }
+        });
     }
 }

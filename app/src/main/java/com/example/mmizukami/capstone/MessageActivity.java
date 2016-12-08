@@ -1,7 +1,12 @@
 package com.example.mmizukami.capstone;
 
-import android.support.v7.app.AppCompatActivity;
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,12 +16,17 @@ import java.util.ArrayList;
 
 public class MessageActivity extends AppCompatActivity {
 
+    private static final int REQUEST_CODE_ADD_CONTACT = 200;
+    private static final int REQUEST_CODE_SEND_SMS = 201;
+
+
     private ArrayList<Contact> contactsList;
     private ContactsAdapter contactsAdapter;
     private DBHelper db;
     private ListView contactsListView;
     private EditText messageEditText;
     private Button sendTextMessageButton;
+
 
 
     @Override
@@ -36,7 +46,12 @@ public class MessageActivity extends AppCompatActivity {
 
     public void addContacts(View view) {
         // TODO: Start an activity for intent to pick a contact from the device.
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_CONTACTS}, REQUEST_CODE_ADD_CONTACT);
 
+        Intent contactIntent = new Intent (Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+        startActivityForResult(contactIntent, REQUEST_CODE_ADD_CONTACT);
     }
 
     // TODO: Overload (create) the onActivityResult() method, get the contactData,
