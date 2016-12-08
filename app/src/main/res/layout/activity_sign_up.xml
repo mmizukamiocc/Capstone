@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
     android:gravity="center">
 
+    <ImageView
+
+        android:scaleType="fitCenter"
+        android:id="@+id/clipBoardImage"
+        android:layout_gravity="center_horizontal"
+        android:background="@mipmap/ic_launcher"
+        android:adjustViewBounds="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,16 +112,7 @@
         android:layout_alignRight="@+id/suPostalAddress"
         android:layout_alignEnd="@+id/suPostalAddress" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:id="@+id/clipBoardImage"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/clip_board"
-        android:adjustViewBounds="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -25,7 +25,7 @@ public class FindPetsActivity extends AppCompatActivity {
     private Spinner choiceSpinner;
     private ListView petsListView;
 
-
+    FindPetListAdapter findPetListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +40,14 @@ public class FindPetsActivity extends AppCompatActivity {
 
         filteredPetList = new ArrayList<>(allPets);
 
-       // findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
+       findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
 
         ArrayAdapter<String> choiceSpinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,choice);
         choiceSpinner.setAdapter(choiceSpinnerAdapter);
         choiceSpinner.setOnItemSelectedListener(choiceSpinnerListener);
 
 
+        db.close();
 
     }
 
@@ -57,20 +58,25 @@ public class FindPetsActivity extends AppCompatActivity {
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+
             switch(i)
             {
                 case 0:
                     filteredPetList.clear();
-                    filteredPetList = new ArrayList<>(allPets);
-
+                    for(Pet pet : allPets) {
+                        filteredPetList.add(pet);
+                        findPetListAdapter.add(pet);
+                    }
                     break;
 
                 case 1:
 
                     for(Pet singlePet : filteredPetList)
                     {
-                        if(!singlePet.isAdopted())
+                        if(!singlePet.isAdopted()) {
                             filteredPetList.remove(singlePet);
+                            findPetListAdapter.remove(singlePet);
+                        }
                     }
 
                     break;
@@ -79,7 +85,10 @@ public class FindPetsActivity extends AppCompatActivity {
                     for(Pet singlePet : filteredPetList)
                     {
                         if(!singlePet.isLost())
+                        {
                             filteredPetList.remove(singlePet);
+                            findPetListAdapter.remove(singlePet);
+                        }
                     }
 
                     break;

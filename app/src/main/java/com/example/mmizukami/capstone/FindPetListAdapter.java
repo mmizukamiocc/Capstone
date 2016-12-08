@@ -21,12 +21,13 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
     private Context mContext;
     private List<Pet> mPetsList = new ArrayList<>();
     private int mResourceId;
-
-    LinearLayout petListLinearLayout;
-    TextView petListNameTextView;
-    TextView petListTypeTextView;
-    TextView petListUserNameTextView;
-    DBHelper db;
+    private User petOwner;
+    private List<Relation> mAllRelations;
+    private LinearLayout petListLinearLayout;
+    private TextView petListNameTextView;
+    private TextView petListTypeTextView;
+    private TextView petListUserNameTextView;
+    private DBHelper db;
 
 
     public FindPetListAdapter(Context context, int resource, List<Pet> pets) {
@@ -35,7 +36,8 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
         mResourceId = resource;
         mPetsList = pets;
         db.getReadableDatabase();
-
+        mAllRelations = db.getAllRelations();
+        db.close();
     }
 
     @Override
@@ -43,6 +45,12 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
     {
 
         final Pet selectedPet = mPetsList.get(pos);
+
+        for(Relation singleRelation : mAllRelations)
+        {
+            if(singleRelation.getPet() == selectedPet)
+               petOwner =  singleRelation.getUser();
+        }
 
         LayoutInflater inflater =
                 (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -59,7 +67,7 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
 
         petListNameTextView.setText(selectedPet.getPetName());
         petListTypeTextView.setText(selectedPet.getType());
-      //  petListUserNameTextView.setText(petUser.getUserName());
+        petListUserNameTextView.setText(petOwner.getUserName());
 
 
         return view;

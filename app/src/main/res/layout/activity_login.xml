@@ -17,25 +17,14 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/laName"
-        android:ems="10"
-        android:hint="User Name"
-        android:layout_marginBottom="139dp"
-        android:text="@string/userName"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/laPassword"
         android:layout_alignTop="@+id/laName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:hint="Password"
-        android:text="@string/password" />
+        android:hint="@string/enter_password"
+        android:gravity="left" />
 
     <Button
         android:layout_width="wrap_content"
@@ -56,4 +45,16 @@
         android:id="@+id/laRegisterHere"
         android:layout_below="@+id/laLoginButton"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/laName"
+        android:ems="10"
+        android:hint="@string/enter_username"
+        android:layout_marginBottom="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/laPassword"
+        android:layout_alignStart="@+id/laPassword"
+        android:gravity="left" />
 </RelativeLayout>

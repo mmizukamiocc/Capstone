@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
 
-    User loginUser;
+    private User loginUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

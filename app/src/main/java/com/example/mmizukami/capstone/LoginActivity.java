@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button) findViewById(R.id.laLoginButton);
         registerHere = (TextView) findViewById(R.id.laRegisterHere);
         db.getReadableDatabase();
-
-
+        userList = db.getAllUsers();
+        db.close();
 
 
 
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 username = loginNameEditText.getText().toString();
                 password = loginPasswordEditText.getText().toString();
                 User loginUser = null;
-                userList = db.getAllUsers();
+
                 for (User singleUser : userList) {
                     if (singleUser.getUserName() == username) {
                         if (singleUser.getPassword() == password)

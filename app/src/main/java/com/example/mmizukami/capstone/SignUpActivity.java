@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -38,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
         db.getReadableDatabase();
         allUserList = db.getAllUsers();
 
+
     }
 
     public void onClick(View view) {
@@ -50,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
             name = userNameEditText.getText().toString();
         else
         {
-            //toast short message and do not do anything
+            Toast.makeText(this, "Username field must be fill. Please try again.", Toast.LENGTH_SHORT).show();
             valid = false;
         }
 
@@ -58,20 +60,20 @@ public class SignUpActivity extends AppCompatActivity {
             pass = passwordEditText.getText().toString();
         else
         {
-            //toast short message and do not do anything
+            Toast.makeText(this, "Password field must be fill. Please try again.", Toast.LENGTH_SHORT).show();
+
             valid = false;
         }
 
             String realName = realNameEditText.getText().toString();
             String email = emailAddressEditText.getText().toString();
-
-
             String phone = phoneEditText.getText().toString();
 
 
         if(pass.length() != 8)
         {
-            //toast short message and do not do anything
+            Toast.makeText(this, "Password must be 8 character. Please try again.", Toast.LENGTH_SHORT).show();
+            passwordEditText.setText("");
             valid = false;
         }
 
@@ -79,7 +81,8 @@ public class SignUpActivity extends AppCompatActivity {
         {
             if(singleUser.getUserName() == name)
             {
-                //toast short message and do not do anything
+                Toast.makeText(this, "Username duplicated. Please use other name.", Toast.LENGTH_SHORT).show();
+                userNameEditText.setText("");
                 valid = false;
             }
 
@@ -88,8 +91,8 @@ public class SignUpActivity extends AppCompatActivity {
         if(valid) {
             newUser = new User(name, realName, email, phone, pass);
             db.addUser(newUser);
-            // toast success message and send to login activity
-
+            Toast.makeText(this, "Sign in completed.", Toast.LENGTH_SHORT).show();
+            db.close();
             startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
         }
 
