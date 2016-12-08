@@ -1,8 +1,9 @@
 package com.example.mmizukami.capstone;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
@@ -30,6 +31,14 @@ public class MenuActivity extends AppCompatActivity {
                 break;
 
             case R.id.addButton:
+                // start user area activity
+                Intent addIntent = new Intent(MenuActivity.this, AddPetActivity.class);
+                addIntent.putExtra("User", loginUser);
+                startActivity(addIntent);
+
+                break;
+
+            case R.id.userButton:
                 // start user area activity
                 Intent userIntent = new Intent(MenuActivity.this, UserAreaActivity.class);
                 userIntent.putExtra("User", loginUser);
