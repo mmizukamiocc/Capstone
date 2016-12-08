@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:text="Add Pet"
+        android:text="@string/add_pet_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/addButton" />
@@ -18,10 +18,16 @@
         android:id="@+id/findButton" />
 
     <Button
-        android:text= ""
+        android:text= "@string/map_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button3" />
+        android:id="@+id/mapButton" />
+
+    <Button
+        android:text="@string/user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userButton" />
 
     <ImageView
         android:layout_width="match_parent"

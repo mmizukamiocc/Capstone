@@ -9,24 +9,29 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
-    String username = "";
-    String password = "";
-    DBHelper db;
-    List<User> userList;
+        private String username = "";
+        private String password = "";
+        private DBHelper db;
+        private ArrayList<User> userList;
+        private EditText loginNameEditText;
+        private EditText loginPasswordEditText;
+        private Button loginButton;
+        private TextView registerHere;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText loginNameEditText = (EditText) findViewById(R.id.laName);
-        final EditText loginPasswordEditText = (EditText) findViewById(R.id.laPassword);
-        final Button loginButton = (Button) findViewById(R.id.laLoginButton);
-        final TextView registerHere = (TextView) findViewById(R.id.laRegisterHere);
+        loginNameEditText = (EditText) findViewById(R.id.laName);
+        loginPasswordEditText = (EditText) findViewById(R.id.laPassword);
+        loginButton = (Button) findViewById(R.id.laLoginButton);
+        registerHere = (TextView) findViewById(R.id.laRegisterHere);
         db.getReadableDatabase();
 
 

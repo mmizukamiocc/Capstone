@@ -60,7 +60,7 @@ public class FindPetsActivity extends AppCompatActivity {
             switch(i)
             {
                 case 0:
-                    filteredPetList.delete();
+                    filteredPetList.clear();
                     filteredPetList = new ArrayList<>(allPets);
 
                     break;
@@ -69,8 +69,8 @@ public class FindPetsActivity extends AppCompatActivity {
 
                     for(Pet singlePet : filteredPetList)
                     {
-                        if(!singlePet.isAdoption())
-                            filterdPetList.remove(singlePet);
+                        if(!singlePet.isAdopted())
+                            filteredPetList.remove(singlePet);
                     }
 
                     break;
@@ -79,7 +79,7 @@ public class FindPetsActivity extends AppCompatActivity {
                     for(Pet singlePet : filteredPetList)
                     {
                         if(!singlePet.isLost())
-                            filterdPetList.remove(singlePet);
+                            filteredPetList.remove(singlePet);
                     }
 
                     break;

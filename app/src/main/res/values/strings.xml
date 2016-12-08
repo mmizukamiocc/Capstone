@@ -15,7 +15,9 @@
     <string name="select_image">Select an image…</string>
     <string name="has_been_adopted">Is this pet adopted? (Check for "Yes")</string>
     <string name="pet_status">Status:</string>
-    <string name="pet_find">Find My Pet</string>
+    <string name="pet_find">Find Pet</string>
+    <string name="user_info">User information</string>
+    <string name="map_menu">Location Finder</string>
     <string name="pet_adoption">Pet Adoption</string>
     <string name="next">Next</string>
     <string name="name_placeholder">&lt;name goes here&gt;</string>

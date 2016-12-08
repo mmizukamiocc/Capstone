@@ -29,7 +29,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(findIntent);
                 break;
 
-            case R.id.userButton:
+            case R.id.addButton:
                 // start user area activity
                 Intent userIntent = new Intent(MenuActivity.this, UserAreaActivity.class);
                 userIntent.putExtra("User", loginUser);
