@@ -42,4 +42,6 @@
     <string name="name">Name</string>
     <string name="phone_number">Phone Number</string>
     <string name="email">Email Address</string>
+    <string name="edit_title">Edit</string>
+    <string name="update_info">Update</string>
 </resources>
