@@ -50,14 +50,19 @@ public class EditUserInfoActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please enter a phone number.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            euiUpdate.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    userUpdate.setRealName(euiName.getText().toString());
-                    userUpdate.setEmail(euiEmailAddress.getText().toString());
-                    userUpdate.setPhone(euiPhone.getText().toString());
-                    userUpdate.setPassword(euiPassword.getText().toString());
-                }
-            });
+            else if (!euiName.getText().toString().trim().isEmpty() &&
+                    !euiEmailAddress.getText().toString().trim().isEmpty() &&
+                    !euiPhone.getText().toString().trim().isEmpty())
+            {
+                euiUpdate.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        userUpdate.setRealName(euiName.getText().toString());
+                        userUpdate.setEmail(euiEmailAddress.getText().toString());
+                        userUpdate.setPhone(euiPhone.getText().toString());
+                        userUpdate.setPassword(euiPassword.getText().toString());
+                    }
+                });
+            }
         }
         else
         {
