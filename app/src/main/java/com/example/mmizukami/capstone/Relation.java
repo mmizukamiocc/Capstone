@@ -7,6 +7,8 @@ import android.os.Parcelable;
  * Created by Ethan on 12/1/2016.
  */
 
+// TODO: Add testing cases
+
 public class Relation implements Parcelable {
 
     private int relationId;
