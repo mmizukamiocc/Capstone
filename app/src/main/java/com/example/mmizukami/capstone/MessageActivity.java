@@ -4,23 +4,25 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MessageActivity extends AppCompatActivity {
 
-    private static final int REQUEST_CODE_ADD_CONTACT = 200;
+    //private static final int REQUEST_CODE_ADD_CONTACT = 200;
     private static final int REQUEST_CODE_SEND_SMS = 201;
 
 
-    private ArrayList<> contactsList;
+    private User loginUser;
+    private ArrayList<User> userContact;
     private ContactsAdapter contactsAdapter;
     private DBHelper db;
     private ListView contactsListView;
@@ -34,38 +36,46 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
 
+        Intent userIntent = getIntent();
+        loginUser = userIntent.getParcelableExtra("User");
+
         db = new DBHelper(this);
-        contactsList = db.getAllContacts();
-        contactsAdapter = new ContactsAdapter(this, R.layout.contact_list_item, contactsList);
+        userContact = db.getAllUsers();
+        contactsAdapter = new ContactsAdapter(this, R.layout.contact_list_item, userContact);
         contactsListView = (ListView) findViewById(R.id.contactsListView);
         contactsListView.setAdapter(contactsAdapter);
 
         messageEditText = (EditText) findViewById(R.id.messageEditText);
         sendTextMessageButton = (Button) findViewById(R.id.sendTextMessageButton);
-    }
 
-    public void addContacts(View view) {
-        // TODO: Start an activity for intent to pick a contact from the device.
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
-                != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_CONTACTS}, REQUEST_CODE_ADD_CONTACT);
+        contactsAdapter.add(loginUser);
 
-        Intent contactIntent = new Intent (Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
-        startActivityForResult(contactIntent, REQUEST_CODE_ADD_CONTACT);
-    }
 
-    // TODO: Overload (create) the onActivityResult() method, get the contactData,
-    // TODO: resolve the content and create a new Contact object from the name and phone number.
-    // TODO: Add the new contact to the database and the contactsAdapter.
-
-    public void deleteContact(View view) {
-        // TODO: Delete the selected contact from the database and remove the contact from the contactsAdapter.
     }
 
     public void sendTextMessage(View view) {
+        String message = messageEditText.getText().toString();
+        if (message.trim().isEmpty()) {
+            Toast.makeText(this, "Please enter a message.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if (userContact.size() == 0) {
+            Toast.makeText(this, "There is no contact.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // Checking for permission to send text message:
+        else if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[] {Manifest.permission.SEND_SMS}, REQUEST_CODE_SEND_SMS);
+        }
+        else {
+            // Define a reference to SmsManager (manages text messages)
+            SmsManager manager = SmsManager.getDefault();
+            for (User singleContact : userContact)
+                manager.sendTextMessage(singleContact.getPhone(), null, message, null, null);
 
-        // TODO: Get the default SmsManager, then send a text message to each of the contacts in the list.
-        // TODO: Be sure to check for permissions to SEND_SMS and request permissions if necessary.
-
+            messageEditText.setText("");
+        }
     }
 }
