@@ -41,6 +41,7 @@ public class PetDetailsActivity extends AppCompatActivity {
 
         AssetManager am = this.getAssets();
         try {
+
             InputStream stream = am.open(detailsIntent.getStringExtra("ImageName"));
             Drawable event = Drawable.createFromStream(stream, petImageUri);
             petDetailImageView.setImageDrawable(event);
@@ -50,4 +51,7 @@ public class PetDetailsActivity extends AppCompatActivity {
             Log.e("Pet Protector", "Error loading " + petImageUri, ex);
         }
     }
+
+    // TODO: Configure button that appears only if pet is lost or up for adoption
+    // TODO: to send to user that owns the pet. Possibly send an Intent?
 }

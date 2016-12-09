@@ -27,7 +27,6 @@
     <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter Password</string>
 
-
     <string-array name="pet_types_array">
         <item>Dog</item>
         <item>Cat</item>
@@ -38,9 +37,9 @@
     </string-array>
 
     // sms
-    <string name="add_contacts_button_text">Add Contacts...</string>
+    <string name="add_contacts_button_text">Add Contacts…</string>
     <string name="send_text_message_button_text">Send Text Message</string>
-    <string name="text_message_hint">Enter text message here...</string>
+    <string name="text_message_hint">Enter text message here…</string>
     <string name="name">Name</string>
     <string name="phone_number">Phone Number</string>
     <string name="email">Email Address</string>

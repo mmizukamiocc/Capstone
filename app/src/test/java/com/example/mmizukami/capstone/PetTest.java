@@ -23,7 +23,7 @@ public class PetTest {
         mPet.setPetName("TestPetName");
         mPet.setType("TestType");
         mPet.setDescription("TestDescription");
-        mPet.setAdaption(true);
+        mPet.setAdoption(true);
         mPet.setLost(true);
         mPet.setImageUri(sampleURI);
     }
@@ -52,7 +52,7 @@ public class PetTest {
 
     @Test
     public void isAdaption() throws Exception {
-    assertEquals(true,mPet.isAdaption());
+    assertEquals(true,mPet.isAdopted());
     }
 
     @Test
