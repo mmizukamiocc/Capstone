@@ -41,15 +41,15 @@ public class UserAreaActivity extends AppCompatActivity {
         String message = name + " welcome to your user area.";
         uaWelcomeMessage.setText(message);
         uaUserName.setText(username);
-        uaName.setText(name);
-        uaEmailAddress.setText(email);
-        uaPhone.setText(phone);
+                uaName.setText(name);
+                uaEmailAddress.setText(email);
+                uaPhone.setText(phone);
 
-        uaEdit.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent editIntent = new Intent(UserAreaActivity.this, EditUserInfoActivity.class);
-                editIntent.putExtra("User", userArea);
-                startActivity(editIntent);
+                uaEdit.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent editIntent = new Intent(UserAreaActivity.this, EditUserInfoActivity.class);
+                        editIntent.putExtra("User", userArea);
+                        startActivity(editIntent);
             }
         });
     }
