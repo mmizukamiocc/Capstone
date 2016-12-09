@@ -44,8 +44,9 @@ public class LoginActivity extends AppCompatActivity {
                 User loginUser = null;
 
                 for (User singleUser : userList) {
-                    if (singleUser.getUserName() == username) {
-                           if (singleUser.getPassword() == password)
+                    if (singleUser.getUserName().equals( username))
+                    {
+                           if (singleUser.getPassword().equals(password))
                                 loginUser = singleUser;
                     }
                 }

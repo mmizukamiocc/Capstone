@@ -27,10 +27,16 @@ public class UserAreaActivity extends AppCompatActivity {
         Intent userAreaIntent = getIntent();
         userArea = userAreaIntent.getParcelableExtra("User");
 
-        String username = userAreaIntent.getStringExtra("username");
-        String name = userAreaIntent.getStringExtra("real_name");
-        String email = userAreaIntent.getStringExtra("email");
-        String phone = userAreaIntent.getStringExtra("phone");
+        String username = userArea.getUserName();
+        String name = userArea.getRealName();
+        String email = userArea.getEmail();
+        String phone = userArea.getPhone();
+
+
+        //String username = userAreaIntent.getStringExtra("username");
+        //String name = userAreaIntent.getStringExtra("real_name");
+        //String email = userAreaIntent.getStringExtra("email");
+        //String phone = userAreaIntent.getStringExtra("phone");
 
         String message = name + " welcome to your user area.";
         uaWelcomeMessage.setText(message);

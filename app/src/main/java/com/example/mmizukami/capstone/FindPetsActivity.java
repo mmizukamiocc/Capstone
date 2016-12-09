@@ -40,6 +40,7 @@ public class FindPetsActivity extends AppCompatActivity {
         allPets = db.getAllPets();
         allRelations = db.getAllRelations();
         user =  userIntent.getParcelableExtra("User");
+        choiceSpinner = (Spinner) findViewById(R.id.choiceSpinner);
 
         filteredPetList = new ArrayList<>(allPets);
 

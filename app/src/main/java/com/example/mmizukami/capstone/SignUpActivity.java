@@ -78,7 +78,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         for(User singleUser : allUserList)
         {
-            if(singleUser.getUserName() == name)
+            if(singleUser.getUserName().equals(name))
             {
                 Toast.makeText(this, "Username duplicated. Please use other name.", Toast.LENGTH_SHORT).show();
                 userNameEditText.setText("");
@@ -87,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         }
 
-        if(valid) {
+        if(valid)
             newUser = new User(name, realName, email, phone, pass);
             db.addUser(newUser);
             Toast.makeText(this, "Sign in completed.", Toast.LENGTH_SHORT).show();
@@ -96,4 +96,4 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-}
+

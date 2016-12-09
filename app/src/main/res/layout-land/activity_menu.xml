@@ -9,25 +9,29 @@
         android:text= "@string/pet_find"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/findButton" />
+        android:id="@+id/findButton"
+        android:onClick="onClick" />
 
     <Button
         android:text="@string/add_pet_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addButton" />
+        android:id="@+id/addButton"
+        android:onClick="onClick" />
 
     <Button
         android:text= "@string/map_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mapButton" />
+        android:id="@+id/mapButton"
+        android:onClick="onClick" />
 
     <Button
         android:text="@string/user_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/userButton" />
+        android:id="@+id/userButton"
+        android:onClick="onClick" />
 
     <ImageView
         android:layout_width="match_parent"
