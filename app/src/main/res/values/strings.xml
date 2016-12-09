@@ -21,9 +21,9 @@
     <string name="map_menu">Location Finder</string>
     <string name="pet_adoption">Pet Adoption</string>
     <string name="next">Next</string>
-    <string name="name_placeholder">&lt;name goes here&gt;</string>
-    <string name="desc_placeholder">&lt;description goes here&gt;</string>
-    <string name="status_placeholder">&lt;status goes here&gt;</string>
+    <string name="name_placeholder">&lt;name not found&gt;</string>
+    <string name="desc_placeholder">&lt;description not found&gt;</string>
+    <string name="status_placeholder">&lt;status not found&gt;</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter Password</string>
     <string name="register_here">Register Here!</string>
