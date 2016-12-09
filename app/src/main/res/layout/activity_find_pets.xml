@@ -17,20 +17,23 @@
         android:id="@+id/spinner" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/pet_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView8" />
+        android:id="@+id/textView8"
+        android:textColor="background_dark" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
-        android:id="@+id/findTypeEditText" />
+        android:id="@+id/findTypeEditText"
+        android:hint="@string/enter_type" />
 
     <ListView
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/petsListView" />
 </LinearLayout>

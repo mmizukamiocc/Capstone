@@ -36,7 +36,6 @@ public class FindPetsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_find_pets);
         db = new DBHelper(this);
         Intent userIntent = getIntent();
-        db.getReadableDatabase();
         String[] choice = new String[] {"What you find?","Adoption","Lost","My Pet"};
         allPets = db.getAllPets();
         allRelations = db.getAllRelations();
@@ -44,9 +43,9 @@ public class FindPetsActivity extends AppCompatActivity {
 
         filteredPetList = new ArrayList<>(allPets);
 
-       findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
+        findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
         findTypeEditText.addTextChangedListener(findTypeTextWatcher);
-
+        petsListView = (ListView) findViewById(R.id.petsListView);
 
         ArrayAdapter<String> choiceSpinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,choice);
         choiceSpinner.setAdapter(choiceSpinnerAdapter);
@@ -54,7 +53,6 @@ public class FindPetsActivity extends AppCompatActivity {
         petsListView.setAdapter(findPetListAdapter);
 
 
-        db.close();
 
     }
 

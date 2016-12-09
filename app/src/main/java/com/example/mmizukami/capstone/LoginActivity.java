@@ -31,9 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         loginPasswordEditText = (EditText) findViewById(R.id.laPassword);
         loginButton = (Button) findViewById(R.id.laLoginButton);
         registerHere = (TextView) findViewById(R.id.laRegisterHere);
-        db.getReadableDatabase();
         userList = db.getAllUsers();
-        db.close();
 
 
 

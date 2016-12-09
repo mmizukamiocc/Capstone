@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 class DBHelper extends SQLiteOpenHelper {
 
+
+    private Context mContext;
     //TASK 1: DEFINE THE DATABASE VERSION, NAME AND TABLE NAME
     static final String DATABASE_NAME = "PetProtector";
     private static final int DATABASE_VERSION = 1;
@@ -44,6 +46,7 @@ class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context){
         super (context, DATABASE_NAME, null, DATABASE_VERSION);
+        mContext = context;
     }
 
     @Override

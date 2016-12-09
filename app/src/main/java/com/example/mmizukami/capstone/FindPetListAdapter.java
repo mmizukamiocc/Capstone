@@ -35,9 +35,7 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
         mContext = context;
         mResourceId = resource;
         mPetsList = pets;
-        db.getReadableDatabase();
         mAllRelations = db.getAllRelations();
-        db.close();
     }
 
     @Override
