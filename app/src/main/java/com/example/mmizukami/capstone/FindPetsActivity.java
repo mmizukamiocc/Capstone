@@ -36,7 +36,6 @@ public class FindPetsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_find_pets);
         db = new DBHelper(this);
         Intent userIntent = getIntent();
-        db.getReadableDatabase();
         String[] choice = new String[] {"What you find?","Adoption","Lost","My Pet"};
         allPets = db.getAllPets();
         allRelations = db.getAllRelations();
@@ -54,7 +53,6 @@ public class FindPetsActivity extends AppCompatActivity {
         petsListView.setAdapter(findPetListAdapter);
 
 
-        db.close();
 
     }
 

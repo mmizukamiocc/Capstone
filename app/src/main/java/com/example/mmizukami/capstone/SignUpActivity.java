@@ -36,7 +36,6 @@ public class SignUpActivity extends AppCompatActivity {
 
         registerButton = (Button) findViewById(R.id.suRegister);
 
-        db.getReadableDatabase();
         allUserList = db.getAllUsers();
 
 
