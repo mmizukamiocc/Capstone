@@ -52,8 +52,6 @@ public class MapActivity extends AppCompatActivity
     // Member variable to store our current location
     private Location myLocation;
 
-    // TODO: Create Marker dog_marker
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,9 +135,6 @@ public class MapActivity extends AppCompatActivity
         // calls. It's redundant to check again, but not suppressing the warnings results in an error.
         @SuppressWarnings("MissingPermission")
 
-
-        // Get the businesses and other points of interest located
-        // nearest to the device's current location.
         PendingResult<PlaceLikelihoodBuffer> result = Places.PlaceDetectionApi
                 .getCurrentPlace(shelterGoogleApiClient, null);
         result.setResultCallback(new ResultCallback<PlaceLikelihoodBuffer>() {
@@ -155,14 +150,13 @@ public class MapActivity extends AppCompatActivity
                         switch (type) {
                             case Place.TYPE_PET_STORE :
                             case Place.TYPE_VETERINARY_CARE:
-                                String attributions = (String) placeLikelihood.getPlace().getAttributions();
                                 String snippet = (String) placeLikelihood.getPlace().getAddress();
 
                                 shelterMap.addMarker(new MarkerOptions()
                                         .position(placeLikelihood.getPlace().getLatLng())
-                                        .title((String) placeLikelihood.getPlace().getName()));
-                                // TODO: Configure markers so that they show up with the custom Marker image
-                                // TODO: (in this case, drawable/dog_marker)
+                                        .title((String) placeLikelihood.getPlace().getName())
+                                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.shelter_marker))
+                                        .snippet(snippet));
                                 break;
                         }
                     }
