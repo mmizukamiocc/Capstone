@@ -96,7 +96,8 @@
         android:layout_alignLeft="@+id/suUserPhone"
         android:layout_alignStart="@+id/suUserPhone"
         android:layout_alignRight="@+id/suUserPhone"
-        android:layout_alignEnd="@+id/suUserPhone"/>
+        android:layout_alignEnd="@+id/suUserPhone"
+        android:onClick="onClick" />
 
 
     </LinearLayout>

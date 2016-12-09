@@ -33,14 +33,14 @@
             android:textAlignment="center"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="30dp" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/suUserName"
             android:ems="10"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:hint="User Name"
             android:layout_below="@+id/textView2"
             android:layout_alignLeft="@+id/suPassword"
@@ -94,7 +94,8 @@
             android:layout_alignLeft="@+id/suUserPhone"
             android:layout_alignStart="@+id/suUserPhone"
             android:layout_alignRight="@+id/suUserPhone"
-            android:layout_alignEnd="@+id/suUserPhone"/>
+            android:layout_alignEnd="@+id/suUserPhone"
+            android:onClick="onClick" />
 
 
     </LinearLayout>

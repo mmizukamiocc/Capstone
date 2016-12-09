@@ -37,15 +37,6 @@
         android:layout_alignRight="@+id/laPassword"
         android:layout_alignEnd="@+id/laPassword" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Register Here"
-        android:id="@+id/laRegisterHere"
-        android:layout_below="@+id/laLoginButton"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,4 +48,33 @@
         android:layout_alignLeft="@+id/laPassword"
         android:layout_alignStart="@+id/laPassword"
         android:gravity="left" />
+
+    <Button
+        android:text="@string/register_here"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/laRegisterHere"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick" />
+
+    <TextView
+        android:text="@string/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:textColor="@android:color/black"
+        android:layout_alignTop="@+id/laPassword"
+        android:layout_alignLeft="@+id/laPassword"
+        android:layout_alignStart="@+id/laPassword" />
+
+    <TextView
+        android:text="@string/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/main_backgroundImage"
+        android:layout_alignRight="@+id/textView10"
+        android:layout_alignEnd="@+id/textView10" />
 </RelativeLayout>

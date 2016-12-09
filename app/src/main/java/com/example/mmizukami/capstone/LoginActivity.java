@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
         private EditText loginNameEditText;
         private EditText loginPasswordEditText;
         private Button loginButton;
-        private TextView registerHere;
+        private Button registerHere;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         loginNameEditText = (EditText) findViewById(R.id.laName);
         loginPasswordEditText = (EditText) findViewById(R.id.laPassword);
         loginButton = (Button) findViewById(R.id.laLoginButton);
-        registerHere = (TextView) findViewById(R.id.laRegisterHere);
+        registerHere = (Button) findViewById(R.id.laRegisterHere);
         userList = db.getAllUsers();
 
 
@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (loginUser == null) {
                     Log.e("User not found error", "Username and password mismatch or Username is incorrect, try again");
+                    Toast.makeText(LoginActivity.this,  "Username and password mismatch or Username is incorrect, try again", Toast.LENGTH_SHORT).show();
                     loginPasswordEditText.setText("");
                 } else {      // start Menu activity
                     Intent loginIntent = new Intent(LoginActivity.this, MenuActivity.class);
@@ -70,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
-
             }
         });
     }

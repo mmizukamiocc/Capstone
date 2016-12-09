@@ -26,7 +26,7 @@
     <string name="status_placeholder">&lt;status goes here&gt;</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter Password</string>
-
+    <string name="register_here">Register Here!</string>
 
     <string-array name="pet_types_array">
         <item>Dog</item>

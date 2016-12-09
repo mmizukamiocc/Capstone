@@ -62,7 +62,7 @@ class DBHelper extends SQLiteOpenHelper {
         database.execSQL (createQuery);
 
 
-        createQuery = "CREATE TABLE " + PETS_TABLE + "("
+       String createQuery2 = "CREATE TABLE " + PETS_TABLE + "("
                 + PETS_KEY_FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 //+ PETS_USER_ID + " INTEGER, "
                 + PETS_FIELD_NAME + " TEXT, "
@@ -70,21 +70,22 @@ class DBHelper extends SQLiteOpenHelper {
                 + PETS_FIELD_DESCRIPTION + " TEXT, "
                 + PETS_FIELD_ADOPTION + " INTEGER, "
                 + PETS_FIELD_LOST + " INTEGER, "
-                + PETS_FIELD_IMAGE_URI + " TEXT, "
+                + PETS_FIELD_IMAGE_URI + " TEXT "
               //  + "FOREIGN KEY(" +PETS_USER_ID +") REFERENCES "
-                + USERS_TABLE + "(" +USERS_KEY_FIELD_ID + ")";
-        database.execSQL (createQuery);
+                //+ USERS_TABLE + "(" +USERS_KEY_FIELD_ID
+                   + ")";
+        database.execSQL (createQuery2);
 
-        createQuery = "CREATE TABLE " + RELATIONS_TABLE + "("
+        String createQuery3 = "CREATE TABLE " + RELATIONS_TABLE + "("
                 + RELATIONS_KEY_FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + RELATIONS_FIELD_PET_ID + " INTEGER, "
-                + RELATIONS_FIELD_USER_ID + " INTEGER"
-                + "FOREIGN KEY(" + RELATIONS_FIELD_PET_ID + " REFERENCES "
+                + RELATIONS_FIELD_USER_ID + " INTEGER, "
+                + "FOREIGN KEY(" + RELATIONS_FIELD_PET_ID + ") REFERENCES "
                 + PETS_TABLE + "(" + PETS_KEY_FIELD_ID + "), "
-                + "FOREIGN KEY(" + RELATIONS_FIELD_USER_ID + " REFERENCES "
+                + "FOREIGN KEY(" + RELATIONS_FIELD_USER_ID + ") REFERENCES "
                 + USERS_TABLE + "(" + USERS_KEY_FIELD_ID + ")"
                 + ")";
-        database.execSQL(createQuery);
+        database.execSQL(createQuery3);
 
 
     }

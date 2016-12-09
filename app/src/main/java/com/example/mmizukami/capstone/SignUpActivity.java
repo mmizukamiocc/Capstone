@@ -91,7 +91,6 @@ public class SignUpActivity extends AppCompatActivity {
             newUser = new User(name, realName, email, phone, pass);
             db.addUser(newUser);
             Toast.makeText(this, "Sign in completed.", Toast.LENGTH_SHORT).show();
-            db.close();
             startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
         }
 
