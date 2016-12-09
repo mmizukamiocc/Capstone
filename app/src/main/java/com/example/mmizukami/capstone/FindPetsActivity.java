@@ -43,9 +43,9 @@ public class FindPetsActivity extends AppCompatActivity {
 
         filteredPetList = new ArrayList<>(allPets);
 
-       findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
+        findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
         findTypeEditText.addTextChangedListener(findTypeTextWatcher);
-
+        petsListView = (ListView) findViewById(R.id.petsListView);
 
         ArrayAdapter<String> choiceSpinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,choice);
         choiceSpinner.setAdapter(choiceSpinnerAdapter);
