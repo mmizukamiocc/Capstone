@@ -1,94 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
         android:scaleType="fitCenter"
         android:id="@+id/clipBoardImage"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/clip_board"
-        android:adjustViewBounds="false" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/suUserName"
-        android:ems="10"
-        android:layout_marginTop="33dp"
-        android:hint="User Name"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/suPassword"
-        android:layout_alignStart="@+id/suPassword" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/suPassword"
-        android:hint="Password"
-        android:layout_below="@+id/suUserName"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/suName"
-        android:hint="Name"
-        android:layout_below="@+id/suPassword"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/suEmailAddress"
-        android:hint="Email"
-        android:layout_below="@+id/suName"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/suUserPhone"
-        android:hint="Phone"
-        android:layout_below="@+id/suEmailAddress"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/suPostalAddress"
-        android:hint="Address"
-        android:layout_below="@+id/suUserPhone"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:id="@+id/textView2"
-        android:textSize="30sp"
-        android:textAlignment="center"
+        android:adjustViewBounds="false"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/suRegister"
-        android:layout_below="@+id/suPostalAddress"
-        android:layout_alignLeft="@+id/suPostalAddress"
-        android:layout_alignStart="@+id/suPostalAddress"
-        android:layout_alignRight="@+id/suPostalAddress"
-        android:layout_alignEnd="@+id/suPostalAddress" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:id="@+id/textView2"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/suUserName"
+            android:ems="10"
+            android:layout_marginTop="5dp"
+            android:hint="User Name"
+            android:layout_below="@+id/textView2"
+            android:layout_alignLeft="@+id/suPassword"
+            android:layout_alignStart="@+id/suPassword" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/suRealName"
+            android:hint="Real Name" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/suPassword"
+            android:hint="Password"
+            android:layout_below="@+id/suUserName"
+            android:layout_centerHorizontal="true" />
+
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/suEmailAddress"
+            android:hint="Email"
+            android:layout_below="@+id/suName"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/suUserPhone"
+            android:hint="Phone"
+            android:layout_below="@+id/suEmailAddress"
+            android:layout_centerHorizontal="true" />
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:id="@+id/suRegister"
+            android:layout_below="@+id/suUserPhone"
+            android:layout_alignLeft="@+id/suUserPhone"
+            android:layout_alignStart="@+id/suUserPhone"
+            android:layout_alignRight="@+id/suUserPhone"
+            android:layout_alignEnd="@+id/suUserPhone"/>
+
+
+    </LinearLayout>
 
 </RelativeLayout>

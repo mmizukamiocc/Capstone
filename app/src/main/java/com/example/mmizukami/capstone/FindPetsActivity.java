@@ -34,7 +34,7 @@ public class FindPetsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_pets);
-
+        db = new DBHelper(this);
         Intent userIntent = getIntent();
         db.getReadableDatabase();
         String[] choice = new String[] {"What you find?","Adoption","Lost","My Pet"};
@@ -45,10 +45,13 @@ public class FindPetsActivity extends AppCompatActivity {
         filteredPetList = new ArrayList<>(allPets);
 
        findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
+        findTypeEditText.addTextChangedListener(findTypeTextWatcher);
+
 
         ArrayAdapter<String> choiceSpinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,choice);
         choiceSpinner.setAdapter(choiceSpinnerAdapter);
         choiceSpinner.setOnItemSelectedListener(choiceSpinnerListener);
+        petsListView.setAdapter(findPetListAdapter);
 
 
         db.close();

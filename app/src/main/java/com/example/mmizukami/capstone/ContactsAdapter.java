@@ -10,37 +10,36 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Nick on 12/7/2016.
  */
 
-public class ContactsAdapter extends ArrayAdapter<Contact> {
+public class ContactsAdapter extends ArrayAdapter<User> {
     private Context mContext;
     private int mResourceId;
-    private List<Contact> mAllContacts;
+    private ArrayList<User> mAllUsers;
 
     private TextView mListItemNameTextView;
     private TextView mListItemPhoneNumberTextView;
 
-    public ContactsAdapter(Context context, int resourceId, ArrayList<Contact> allContacts) {
-        super(context, resourceId, allContacts);
+    public ContactsAdapter(Context context, int resourceId, ArrayList<User> allUsers) {
+        super(context, resourceId, allUsers);
         this.mContext = context;
         this.mResourceId = resourceId;
-        this.mAllContacts = allContacts;
+        this.mAllUsers =  allUsers;
     }
 
     public View getView(int pos, View convertView, ViewGroup parent)
     {
-        Contact contact = mAllContacts.get(pos);
+        User contact = mAllUsers.get(pos);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(mResourceId, null);
 
         mListItemNameTextView = (TextView) view.findViewById(R.id.listItemNameTextView);
         mListItemPhoneNumberTextView = (TextView) view.findViewById(R.id.listItemPhoneNumberTextView);
 
-        mListItemNameTextView.setText(contact.getName());
+        mListItemNameTextView.setText(contact.getUserName());
         mListItemPhoneNumberTextView.setText(contact.getPhone());
 
         LinearLayout selectedLinearLayout = (LinearLayout) view.findViewById(R.id.contactItemLinearLayout);

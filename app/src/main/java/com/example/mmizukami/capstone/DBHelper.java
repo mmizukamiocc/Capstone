@@ -17,13 +17,11 @@ class DBHelper extends SQLiteOpenHelper {
 
     private static final String PETS_TABLE = "Pets";
     private static final String USERS_TABLE = "Users";
-    //private static final String SMS_TABLE = "SMSSender";
     private static final String RELATIONS_TABLE = "Relations";
 
 
     //TASK 2: DEFINE THE FIELDS (COLUMN NAMES) FOR THE TABLE
     private static final String PETS_KEY_FIELD_ID = "id";
-    //private static final String PETS_USER_ID = "user_id";
     private static final String PETS_FIELD_NAME = "pet_name";
     private static final String PETS_FIELD_TYPE = "type";
     private static final String PETS_FIELD_DESCRIPTION = "description";
@@ -41,13 +39,6 @@ class DBHelper extends SQLiteOpenHelper {
     private static final String RELATIONS_KEY_FIELD_ID = "id";
     private static final String RELATIONS_FIELD_PET_ID = "pet";
     private static final String RELATIONS_FIELD_USER_ID = "user";
-
-    // TODO: Rename these variables.
-    // TODO: Hint: You'll want to use CTRL+F and replace all at the same time.
-    private static final String DATABASE_TABLE = "Contacts";
-    private static final String KEY_FIELD_ID = "id";
-    private static final String FIELD_NAME = "name";
-    private static final String FIELD_PHONE_NUMBER = "phone_number";
 
 
 
@@ -92,12 +83,6 @@ class DBHelper extends SQLiteOpenHelper {
                 + ")";
         database.execSQL(createQuery);
 
-        createQuery = "CREATE TABLE " + DATABASE_TABLE + " ("
-                + KEY_FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + FIELD_NAME + " TEXT, "
-                + FIELD_PHONE_NUMBER + " TEXT)";
-        database.execSQL(createQuery);
-
 
     }
 
@@ -108,7 +93,7 @@ class DBHelper extends SQLiteOpenHelper {
         database.execSQL("DROP TABLE IF EXISTS " + USERS_TABLE);
         database.execSQL("DROP TABLE IF EXISTS " + PETS_TABLE);
         database.execSQL("DROP TABLE IF EXISTS " + RELATIONS_TABLE);
-        database.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
+
 
         onCreate(database);
     }
@@ -361,76 +346,5 @@ class DBHelper extends SQLiteOpenHelper {
                 new String[]{String.valueOf(target)});
         db.close();
     }
-
-    //********** SMS TABLE OPERATIONS:  ADD, GET ALL, GET 1, DELETE
-
-    public void addContact(Contact contacts) {
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        // add key-value
-        values.put(FIELD_NAME, contacts.getName());
-        values.put(FIELD_PHONE_NUMBER, contacts.getPhone());
-
-        db.insert(DATABASE_TABLE, null, values);
-        db.close();
-    }
-
-    public ArrayList<Contact> getAllContacts() {
-        ArrayList<Contact> contactsList = new ArrayList<>();
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(DATABASE_TABLE, null, null, null, null, null, null);
-
-        if(cursor.moveToFirst())
-        {
-            do{
-                int id = cursor.getInt(0); // index column
-                String name = cursor.getString(1);
-                String phoneNumber = cursor.getString(2);
-
-                Contact newContact = new Contact(id, name, phoneNumber);
-
-                contactsList.add(newContact);
-            }
-            while(cursor.moveToNext());
-        }
-
-        db.close();
-
-        return contactsList;
-    }
-
-    public Contact getContact(String name) {
-        Contact contact = new Contact();
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(DATABASE_TABLE,
-                new String[] {KEY_FIELD_ID, FIELD_NAME, FIELD_PHONE_NUMBER},
-                FIELD_NAME + " = ?", new String[]{name}, null, null, null);
-
-        if(cursor.moveToFirst())
-        {
-            do{
-                int id = cursor.getInt(0); // index column
-                String mName = cursor.getString(1);
-                String phone = cursor.getString(2);
-
-                contact.setName(mName);
-                contact.setPhone(phone);
-                contact = new Contact(id, mName, phone);
-            }
-            while(cursor.moveToNext());
-        }
-        db.close();
-        return contact;
-    }
-
-    public void deleteContact(int id)
-    {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(DATABASE_TABLE, KEY_FIELD_ID + " = ?", new String[] {String.valueOf(id)});
-        db.close();
-    }
 }
+

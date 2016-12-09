@@ -27,7 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
+        db = new DBHelper(this);
         userNameEditText = (EditText) findViewById(R.id.suUserName);
         realNameEditText = (EditText) findViewById(R.id.suRealName);
         passwordEditText = (EditText) findViewById(R.id.suPassword);

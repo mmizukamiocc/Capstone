@@ -13,7 +13,7 @@
         android:scaleType="fitCenter"
         android:id="@+id/clipBoardImage"
         android:layout_gravity="center_horizontal"
-        android:background="@mipmap/ic_launcher"
+        android:background="@drawable/clip_board"
         android:adjustViewBounds="false"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -65,14 +65,7 @@
         android:layout_below="@+id/suUserName"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/suName"
-        android:hint="Name"
-        android:layout_below="@+id/suPassword"
-        android:layout_centerHorizontal="true" />
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -92,25 +85,18 @@
         android:layout_below="@+id/suEmailAddress"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/suPostalAddress"
-        android:hint="Address"
-        android:layout_below="@+id/suUserPhone"
-        android:layout_centerHorizontal="true" />
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/suRegister"
-        android:layout_below="@+id/suPostalAddress"
-        android:layout_alignLeft="@+id/suPostalAddress"
-        android:layout_alignStart="@+id/suPostalAddress"
-        android:layout_alignRight="@+id/suPostalAddress"
-        android:layout_alignEnd="@+id/suPostalAddress" />
+        android:layout_below="@+id/suUserPhone"
+        android:layout_alignLeft="@+id/suUserPhone"
+        android:layout_alignStart="@+id/suUserPhone"
+        android:layout_alignRight="@+id/suUserPhone"
+        android:layout_alignEnd="@+id/suUserPhone"/>
 
 
     </LinearLayout>

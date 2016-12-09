@@ -20,7 +20,7 @@ public class MessageActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_SEND_SMS = 201;
 
 
-    private ArrayList<Contact> contactsList;
+    private ArrayList<> contactsList;
     private ContactsAdapter contactsAdapter;
     private DBHelper db;
     private ListView contactsListView;
