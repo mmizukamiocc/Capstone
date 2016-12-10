@@ -44,12 +44,12 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(userIntent);
                 break;
 
-      //      case R.id.mapButton:
+           case R.id.mapButton:
                 // start map activity
-          //      Intent mapIntent = new Intent(MenuActivity.this, MapActivity.class);
-          //      mapIntent.putExtra("User", loginUser);
-          //      startActivity(mapIntent);
-           //     break;
+               Intent mapIntent = new Intent(MenuActivity.this, MapActivity.class);
+               mapIntent.putExtra("User", loginUser);
+               startActivity(mapIntent);
+               break;
 
 
         }
