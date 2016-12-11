@@ -34,7 +34,8 @@ public class AddPetActivity extends AppCompatActivity {
     private EditText petDescriptionEditText;
     private ImageView petImageSelectImageView;
     private CheckBox isAdoptedCheckBox;
-
+    private User loginUser;
+    private DBHelper db;
     private static final int REQUEST_CODE = 573;
     private Uri imageURI;
 
@@ -42,6 +43,10 @@ public class AddPetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_pet);
+        db = new DBHelper(this);
+        Intent userIntent = getIntent();
+        loginUser = userIntent.getParcelableExtra("User");
+
 
         petNameEntryEditText = (EditText) findViewById(R.id.petNameEntryEditText);
         petTypeSpinner = (Spinner) findViewById(R.id.petTypeSpinner);
@@ -116,7 +121,7 @@ public class AddPetActivity extends AppCompatActivity {
                 + '/' + res.getResourceEntryName(resId));
     }
 
-    public void onNextClick (View view) {
+    public void onNextClick(View view) {
 
         if (petNameEntryEditText.getText().toString().equals("") ||
                 petDescriptionEditText.getText().toString().equals("")) {
@@ -135,6 +140,13 @@ public class AddPetActivity extends AppCompatActivity {
                     isAdoptedCheckBox.isChecked(),
                     false,
                     imageURI);
+            Relation relationToAdd = new Relation(petToAdd,loginUser);
+
+            db.addPet(petToAdd);
+            db.addRelation(relationToAdd);
+            Intent addIntent = new Intent(AddPetActivity.this, MenuActivity.class);
+            addIntent.putExtra("User", loginUser);
+            startActivity(addIntent);
         }
 
     }

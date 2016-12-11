@@ -20,7 +20,11 @@ public class Relation implements Parcelable {
         mPet = petToAdd;
         mUser = userToAdd;
     }
-
+    public Relation( Pet petToAdd, User userToAdd) {
+        relationId = -1;
+        mPet = petToAdd;
+        mUser = userToAdd;
+    }
     public Pet getPet() {
         return mPet;
     }
