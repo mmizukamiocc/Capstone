@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+/**
+ * Created by mmizukami on 11/10/2016.
+ */
 
 public class LoginActivity extends AppCompatActivity {
 

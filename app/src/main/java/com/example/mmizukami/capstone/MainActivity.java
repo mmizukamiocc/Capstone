@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Mahiro!
+ * Created by mmizukami on 11/10/2016.
  */
+
 
 public class MainActivity extends AppCompatActivity {
 

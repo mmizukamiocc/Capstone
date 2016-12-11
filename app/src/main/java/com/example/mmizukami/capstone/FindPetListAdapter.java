@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by mmizukami on 11/29/2016. !!
+ * Created by mmizukami on 11/29/2016.
  */
 
 public class FindPetListAdapter extends ArrayAdapter<Pet> {
