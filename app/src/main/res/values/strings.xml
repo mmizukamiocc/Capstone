@@ -6,11 +6,12 @@
     <string name="add_pet_text">Add a Pet</string>
     <string name="login_button">Log in</string>
     <string name="sign_up_button">Sign up</string>
+    <string name="edit_pet_info">Edit Pet Info</string>
     <string name="pet_name">Name of pet</string>
     <string name="pet_type">Type of pet</string>
     <string name="pet_desc">Description of pet</string>
     <string name="enter_name">Enter name here…</string>
-    <string name= "type_of_pet">Type of the Pet (optional)</string>
+    <string name="type_of_pet">Type of the Pet (optional)</string>
     <string name="enter_type">Enter type here…</string>
     <string name="enter_desc">Enter description here…</string>
     <string name="select_image">Select an image…</string>
@@ -46,4 +47,5 @@
     <string name="email">Email Address</string>
     <string name="edit_title">Edit User Info</string>
     <string name="update_info">Update</string>
+
 </resources>

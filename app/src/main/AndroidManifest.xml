@@ -45,6 +45,7 @@
 
         <activity android:name=".MapActivity" />
         <activity android:name=".EditUserInfoActivity" />
+        <activity android:name=".EditPetInfoActivity"></activity>
     </application>
 
 </manifest>
