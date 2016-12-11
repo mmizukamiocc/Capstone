@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+/**
+ * Created by mmizukami on 11/10/2016.
+ */
 
 public class MenuActivity extends AppCompatActivity {
 
