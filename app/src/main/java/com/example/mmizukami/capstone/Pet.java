@@ -18,6 +18,19 @@ public class Pet implements Parcelable{
     private Uri mImageUri;
 
 
+    /**
+     * Constructor for Pet object
+     * all param can not be @code null
+     * @param mId id for the Pet
+     * @param mPetName name of the pet
+     * @param mType type of the pet
+     * @param mDescription description of the pet
+     * @param mAdoption this member variable will be true if the pet is for adoption
+     * @param mLost this member variable will be true if the pet is lost
+     * @param mImageUri URI for the pet image
+     *
+     * @author Mahiro Mizukami
+     * */
     public Pet(int mId,  String mPetName, String mType, String mDescription, boolean mAdoption, boolean mLost, Uri mImageUri) {
         this.mId = mId;
 
@@ -29,6 +42,10 @@ public class Pet implements Parcelable{
         this.mImageUri = mImageUri;
     }
 
+    /**
+     * Constructor for Pet object with default value
+     * @author Mahiro Mizukami
+     * */
     public Pet() {
         mId = -1;
 
@@ -39,6 +56,18 @@ public class Pet implements Parcelable{
         mImageUri = null; // set something as Default later
     }
 
+    /**
+     * Constructor for Pet object without id - it is usually for Database
+     * all param can not be @code null
+     * @param mPetName name of the pet
+     * @param mType type of the pet
+     * @param mDescription description of the pet
+     * @param mAdoption this member variable will be true if the pet is for adoption
+     * @param mLost this member variable will be true if the pet is lost
+     * @param mImageUri URI for the pet image
+     *
+     * @author Mahiro Mizukami
+     * */
     public Pet(String mPetName, String mType, String mDescription, boolean mAdoption, boolean mLost, Uri mImageUri) {
         mId = -1;
         this.mPetName = mPetName;
@@ -49,6 +78,11 @@ public class Pet implements Parcelable{
         this.mImageUri = mImageUri;
     }
 
+    /**
+     * Constructor for Pet object for parcelable extra in intent
+     * @param in Parcel data in Intent
+     * @author Mahiro Mizukami
+     * */
     protected Pet(Parcel in) {
         mId = in.readInt();
 
@@ -71,55 +105,119 @@ public class Pet implements Parcelable{
             return new Pet[size];
         }
     };
-
+    /**
+     * Getter for mId
+     * @return int ID for the pet
+     * @author Mahiro Mizukami
+     * */
     public int getId() {
         return mId;
     }
 
+    /**
+     * Getter for mPetName
+     * @return String name of the pet
+     * @author Mahiro Mizukami
+     * */
     public String getPetName() {
         return mPetName;
     }
 
+    /**
+     * Setter for mPetName
+     * @param mPetName new name for the pet
+     * @author Mahiro Mizukami
+     * */
     public void setPetName(String mPetName) {
         this.mPetName = mPetName;
     }
 
+    /**
+     * Getter for mType
+     * @return String type of the pet
+     * @author Mahiro Mizukami
+     * */
     public String getType() {
         return mType;
     }
 
+    /**
+     * Setter for mType
+     * @param mType new type for the pet
+     * @author Mahiro Mizukami
+     * */
     public void setType(String mType) {
         this.mType = mType;
     }
 
+    /**
+     * Getter for mDescription
+     * @return String description for the pet
+     * @author Mahiro Mizukami
+     * */
     public String getDescription() {
         return mDescription;
     }
 
+    /**
+     * Setter for mDescription
+     * @param mDescription new description for the pet
+     * @author Mahiro Mizukami
+     * */
     public void setDescription(String mDescription) {
         this.mDescription = mDescription;
     }
 
+    /**
+     * Getter for mAdoption
+     * @return boolean adoption status for the pet
+     * @author Mahiro Mizukami
+     * */
     public boolean isAdopted() {
         return mAdoption;
     }
 
+    /**
+     * Setter for mAdoption
+     * @param mAdoption new adoption status for the pet
+     * @author Mahiro Mizukami
+     * */
     public void setAdoption(boolean mAdoption) {
         this.mAdoption = mAdoption;
     }
 
+    /**
+     * Getter for mLost
+     * @return boolean lost status for the pet
+     * @author Mahiro Mizukami
+     * */
     public boolean isLost() {
         return mLost;
     }
 
+    /**
+     * Setter for mLost
+     * @param mLost new lost status for the pet
+     * @author Mahiro Mizukami
+     * */
     public void setLost(boolean mLost) {
         this.mLost = mLost;
     }
 
+    /**
+     * Getter for mImageUri
+     * @return Uri Image Uri for the picture of the pet
+     * @author Mahiro Mizukami
+     * */
     public Uri getImageUri() {
         return mImageUri;
     }
 
+    /**
+     * Setter for mImageUri
+     * @param mImageUri new image URI for the pet
+     * @author Mahiro Mizukami
+     * */
     public void setImageUri(Uri mImageUri) {
         this.mImageUri = mImageUri;
     }
