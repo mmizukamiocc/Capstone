@@ -27,15 +27,14 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
     private TextView petListNameTextView;
     private TextView petListTypeTextView;
     private TextView petListUserNameTextView;
-    private DBHelper db;
 
 
-    public FindPetListAdapter(Context context, int resource, List<Pet> pets) {
+    public FindPetListAdapter(Context context, int resource, List<Pet> pets,List<Relation> relations) {
         super(context, resource);
         mContext = context;
         mResourceId = resource;
         mPetsList = pets;
-        mAllRelations = db.getAllRelations();
+        mAllRelations = relations;
     }
 
     @Override
