@@ -203,7 +203,7 @@ class DBHelper extends SQLiteOpenHelper {
 
     /**
      * Update a User data in the database
-     *
+     * @param user new data for the user
      * @author Mahiro Mizukami
      * */
     public void updateUser(User user){
@@ -342,6 +342,7 @@ class DBHelper extends SQLiteOpenHelper {
     /**
      * Update a Pet data in the database
      *
+     * @param pet new data for the pet
      * @author Mahiro Mizukami
      * */
     public void updatePet(Pet pet){
