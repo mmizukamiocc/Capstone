@@ -95,6 +95,13 @@
                 android:id="@+id/epiAdoptedCheckBox"
                 android:layout_weight="0.05" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/update_info"
+                android:id="@+id/epiUpdatePet"
+                android:onClick="onUpdate" />
+
         </LinearLayout>
     </ScrollView>
 

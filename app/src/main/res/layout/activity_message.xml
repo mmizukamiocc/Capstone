@@ -37,18 +37,6 @@
             android:textSize="18sp"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/addContactsButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/holo_blue_dark"
-        android:elevation="@dimen/activity_horizontal_margin"
-        android:onClick="addContacts"
-        android:text="@string/add_contacts_button_text"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"/>
-
     <ListView
         android:id="@+id/contactsListView"
         android:layout_width="match_parent"

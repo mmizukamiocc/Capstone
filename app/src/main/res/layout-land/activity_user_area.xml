@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/userName"
+                android:text="@string/user_name"
                 android:id="@+id/textView2"
                 android:layout_below="@+id/uaWelcomeMessage"
                 android:layout_alignParentLeft="true"
@@ -110,7 +110,7 @@
         android:layout_alignEnd="@+id/uaEmailAddress" />
 
     <Button
-        android:text="@string/edit_title"
+        android:text="@string/update_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/uaPhone"
