@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class UserAreaActivity extends AppCompatActivity {
 
-    User userArea;
+    User loginUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +25,12 @@ public class UserAreaActivity extends AppCompatActivity {
         final TextView uaWelcomeMessage = (TextView) findViewById(R.id.uaWelcomeMessage);
 
         Intent userAreaIntent = getIntent();
-        userArea = userAreaIntent.getParcelableExtra("User");
+        loginUser = userAreaIntent.getParcelableExtra("User");
 
-        String username = userArea.getUserName();
-        String name = userArea.getRealName();
-        String email = userArea.getEmail();
-        String phone = userArea.getPhone();
-
-
-        //String username = userAreaIntent.getStringExtra("username");
-        //String name = userAreaIntent.getStringExtra("real_name");
-        //String email = userAreaIntent.getStringExtra("email");
-        //String phone = userAreaIntent.getStringExtra("phone");
+        String username = loginUser.getUserName();
+        String name = loginUser.getRealName();
+        String email = loginUser.getEmail();
+        String phone = loginUser.getPhone();
 
         String message = name + " welcome to your user area.";
         uaWelcomeMessage.setText(message);
@@ -48,7 +42,7 @@ public class UserAreaActivity extends AppCompatActivity {
                 uaEdit.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         Intent editIntent = new Intent(UserAreaActivity.this, EditUserInfoActivity.class);
-                        editIntent.putExtra("User", userArea);
+                        editIntent.putExtra("User", loginUser);
                         startActivity(editIntent);
             }
         });

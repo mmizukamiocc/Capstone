@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class EditUserInfoActivity extends AppCompatActivity {
 
-    User userUpdate;
+    private User loginUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,13 @@ public class EditUserInfoActivity extends AppCompatActivity {
         final EditText euiName = (EditText) findViewById(R.id.euiName);
         final EditText euiEmailAddress = (EditText) findViewById(R.id.euiEmailAddress);
         final EditText euiPhone = (EditText) findViewById(R.id.euiPhone);
+        final EditText euiOldPassword = (EditText) findViewById(R.id.euiOldPassword);
         final EditText euiPassword = (EditText) findViewById(R.id.euiPassword);
         final Button euiUpdate = (Button) findViewById(R.id.euiUpdate);
 
 
         Intent updateIntent = getIntent();
-        userUpdate = updateIntent.getParcelableExtra("User");
+        loginUser = updateIntent.getParcelableExtra("User");
 
         String name = updateIntent.getStringExtra("real_name");
         String email = updateIntent.getStringExtra("email");
@@ -35,39 +36,40 @@ public class EditUserInfoActivity extends AppCompatActivity {
         euiName.setText(name);
         euiEmailAddress.setText(email);
         euiPhone.setText(phone);
-        euiPassword.setText(password);
-        if (userUpdate.getPassword() == password)
+
+        if (password == euiOldPassword.getText().toString())
         {
             if (euiName.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "Please enter a name.", Toast.LENGTH_SHORT).show();
                 return;
-            }
-            else if (euiEmailAddress.getText().toString().trim().isEmpty()) {
+            } else if (euiEmailAddress.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "Please enter a email address.", Toast.LENGTH_SHORT).show();
                 return;
-            }
-            else if (euiPhone.getText().toString().trim().isEmpty()) {
+            } else if (euiPhone.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "Please enter a phone number.", Toast.LENGTH_SHORT).show();
                 return;
-            }
-            else if (!euiName.getText().toString().trim().isEmpty() &&
+            } else if (!euiName.getText().toString().trim().isEmpty() &&
                     !euiEmailAddress.getText().toString().trim().isEmpty() &&
-                    !euiPhone.getText().toString().trim().isEmpty())
-            {
+                    !euiPhone.getText().toString().trim().isEmpty()) {
                 euiUpdate.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        userUpdate.setRealName(euiName.getText().toString());
-                        userUpdate.setEmail(euiEmailAddress.getText().toString());
-                        userUpdate.setPhone(euiPhone.getText().toString());
-                        userUpdate.setPassword(euiPassword.getText().toString());
+                        loginUser.setRealName(euiName.getText().toString());
+                        loginUser.setEmail(euiEmailAddress.getText().toString());
+                        loginUser.setPhone(euiPhone.getText().toString());
+                        loginUser.setPassword(euiPassword.getText().toString());
+
+                        Intent addIntent = new Intent(EditUserInfoActivity.this, MenuActivity.class);
+                        addIntent.putExtra("User", loginUser);
+                        startActivity(addIntent);
                     }
                 });
             }
         }
         else
         {
-            Toast.makeText(this, password + " is Incorrect",
+            Toast.makeText(this, euiOldPassword + " is Incorrect",
                     Toast.LENGTH_SHORT).show();
         }
     }
 }
+
