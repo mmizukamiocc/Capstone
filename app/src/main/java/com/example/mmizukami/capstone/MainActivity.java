@@ -7,10 +7,13 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by mmizukami on 11/10/2016.
+ * Start page for the app
+ * It starts other activity login or sign up
+ *
+ *  LoginActivity - enter username and password to login
+ *  SignUpActivity - add user information to the database
+ *  @author Mahiro Mizukami
  */
-
-
 public class MainActivity extends AppCompatActivity {
 
     private Button logInButton;

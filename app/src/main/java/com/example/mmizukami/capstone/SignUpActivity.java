@@ -10,9 +10,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 /**
- * Created by mmizukami on 11/10/2016.
+ * Sign up page for the app
+ * It add a user information to the database and start LoginActivity
+ *
+ *  @input - String username,String realName, String email, String phone, String password
+ *  @author Mahiro Mizukami
  */
-
 public class SignUpActivity extends AppCompatActivity {
 
 

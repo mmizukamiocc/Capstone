@@ -10,10 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-/**
- * Created by mmizukami on 11/10/2016.
- */
 
+/**
+ * Login page for the app
+ * It starts MenuActivity with login user information
+ *
+ *  @input - String username, String password
+ *  @author Mahiro Mizukami
+ */
 public class LoginActivity extends AppCompatActivity {
 
         private String username = "";

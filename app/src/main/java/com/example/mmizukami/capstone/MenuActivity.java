@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-/**
- * Created by mmizukami on 11/10/2016.
- */
 
+/**
+ * Menu page for the app
+ * It starts other activity with login information
+ *
+ *  FindPetsActivity - find pet for adoption,lost pet,or my pet information
+ *  AddPetActivity - add Pet object to the database
+ *  UserAreaActivity - check and edit user information
+ *  MapActivity - find places which help pets
+ *
+ *  @author Mahiro Mizukami
+ */
 public class MenuActivity extends AppCompatActivity {
 
     private User loginUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

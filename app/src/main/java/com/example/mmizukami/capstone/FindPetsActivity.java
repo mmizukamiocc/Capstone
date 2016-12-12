@@ -16,9 +16,13 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Created by mmizukami on 11/10/2016.
+ * Find pet page for the app
+ * It find specific pet information from database.
+ * It uses Pet and Relation table in the database to find all information,
+ *  and show as a list founded by user input
+ *
+ *  @author Mahiro Mizukami
  */
-
 public class FindPetsActivity extends AppCompatActivity {
 
 
@@ -64,7 +68,7 @@ public class FindPetsActivity extends AppCompatActivity {
 
 
     }
-   /* public void test()
+   /* private void test()
     {
         null is not acceptable for imageUri, cant run
 
