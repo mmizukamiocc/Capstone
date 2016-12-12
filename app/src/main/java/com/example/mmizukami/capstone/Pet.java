@@ -1,5 +1,7 @@
 package com.example.mmizukami.capstone;
 
+import android.content.ContentResolver;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -16,7 +18,7 @@ public class Pet implements Parcelable{
     private boolean mAdoption;
     private boolean mLost;
     private Uri mImageUri;
-
+    private Context mContext;
 
     /**
      * Constructor for Pet object
@@ -53,7 +55,22 @@ public class Pet implements Parcelable{
         mDescription = "";
         mAdoption = false;
         mLost = false;
-        mImageUri = null; // set something as Default later
+        mImageUri = defaultImageUri();
+    }
+
+    /**
+    * test constructor with default image
+    *
+    * */
+    public Pet( String mPetName, String mType, String mDescription, boolean mAdoption, boolean mLost) {
+
+
+        this.mPetName = mPetName;
+        this.mType = mType;
+        this.mDescription = mDescription;
+        this.mAdoption = mAdoption;
+        this.mLost = mLost;
+        this.mImageUri = defaultImageUri();
     }
 
     /**
@@ -222,7 +239,19 @@ public class Pet implements Parcelable{
         this.mImageUri = mImageUri;
     }
 
+    /**
+     * Default value for mImageUri
+     * @author Mahiro Mizukami
+     * */
+    public Uri defaultImageUri() {
+//need to fix
+        Uri imageUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" +
+                mContext.getResources().getResourcePackageName(R.drawable.dog) + '/' +
+                mContext.getResources().getResourceTypeName(R.drawable.dog) + '/' +
+                mContext.getResources().getResourceEntryName(R.drawable.dog) );
 
+        return imageUri;
+    }
 
     @Override
     public int describeContents() {
