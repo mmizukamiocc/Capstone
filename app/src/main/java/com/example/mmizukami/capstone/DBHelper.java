@@ -43,12 +43,21 @@ class DBHelper extends SQLiteOpenHelper {
     private static final String RELATIONS_FIELD_USER_ID = "user";
 
 
-
+/**
+* Constructor for db Helper
+*
+* @param context
+ * */
     public DBHelper(Context context){
         super (context, DATABASE_NAME, null, DATABASE_VERSION);
         mContext = context;
     }
 
+    /**
+     * Create tables in database
+     *
+     * @param database SQLiteDatabase to save all data
+     * */
     @Override
     public void onCreate (SQLiteDatabase database){
 
@@ -90,6 +99,13 @@ class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Upgrade all tables
+     *
+     * @param database SQLiteDatabase to save all data
+     * @param oldVersion number of old version
+     * @param newVersion number of new version
+     * */
     @Override
     public void onUpgrade(SQLiteDatabase database,
                           int oldVersion,
@@ -104,6 +120,12 @@ class DBHelper extends SQLiteOpenHelper {
 
     //********** USER TABLE OPERATIONS:  ADD, GETALL, EDIT, DELETE
 
+    /**
+     * Add a User object in the database
+     *
+     * @param user user object to add. except {@code null}
+     * @author Mahiro Mizukami
+     * */
     public void addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -125,6 +147,12 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Get all User object from the database
+     *
+     * @return ArrayList<User> array list includes all user data in the database
+     * @author Mahiro Mizukami
+     * */
     public ArrayList<User> getAllUsers() {
         ArrayList<User> usersList = new ArrayList<>();
         SQLiteDatabase database = this.getReadableDatabase();
@@ -146,6 +174,12 @@ class DBHelper extends SQLiteOpenHelper {
         return usersList;
     }
 
+    /**
+     * Delete a User data in the database
+     *
+     * @param user user object to delete. except {@code null}
+     * @author Mahiro Mizukami
+     * */
     public void deleteUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -155,6 +189,11 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Delete all User data in the database
+     *
+     * @author Mahiro Mizukami
+     * */
     public void deleteAllUsers()
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -162,6 +201,11 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Update a User data in the database
+     *
+     * @author Mahiro Mizukami
+     * */
     public void updateUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -177,6 +221,13 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Get a User data from the database find by their id
+     *
+     * @param id user id to find
+     * @return User user object founded by id
+     * @author Mahiro Mizukami
+     * */
     public User getUser(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(
@@ -198,6 +249,12 @@ class DBHelper extends SQLiteOpenHelper {
 
 
     //********** PETS TABLE OPERATIONS:  ADD, GETALL, EDIT, DELETE
+    /**
+     * Add a Pet object in the database
+     *
+     * @param pet pet object to add. except {@code null}
+     * @author Mahiro Mizukami
+     * */
     public void addPet(Pet pet) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -227,6 +284,12 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Get all Pet object from the database
+     *
+     * @return ArrayList<Pet> array list includes all pet data in the database
+     * @author Mahiro Mizukami
+     * */
     public ArrayList<Pet> getAllPets() {
         ArrayList<Pet> petsList = new ArrayList<>();
         SQLiteDatabase database = this.getReadableDatabase();
@@ -249,6 +312,12 @@ class DBHelper extends SQLiteOpenHelper {
         return petsList;
     }
 
+    /**
+     * Delete a Pet data in the database
+     *
+     * @param pet Pet object to delete. except {@code null}
+     * @author Mahiro Mizukami
+     * */
     public void deletePet(Pet pet){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -258,6 +327,11 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Delete all Pet data in the database
+     *
+     * @author Mahiro Mizukami
+     * */
     public void deleteAllPets()
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -265,7 +339,11 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-
+    /**
+     * Update a Pet data in the database
+     *
+     * @author Mahiro Mizukami
+     * */
     public void updatePet(Pet pet){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -289,7 +367,13 @@ class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-
+    /**
+     * Get a Pet data from the database find by their id
+     *
+     * @param id pet id to find
+     * @return Pet pet object founded by id
+     * @author Mahiro Mizukami
+     * */
     public Pet getPet(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(
