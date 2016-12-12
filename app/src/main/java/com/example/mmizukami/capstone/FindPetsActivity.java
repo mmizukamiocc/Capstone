@@ -1,6 +1,7 @@
 package com.example.mmizukami.capstone;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -33,6 +34,7 @@ public class FindPetsActivity extends AppCompatActivity {
 
     private FindPetListAdapter findPetListAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,9 @@ public class FindPetsActivity extends AppCompatActivity {
         db = new DBHelper(this);
         Intent userIntent = getIntent();
         String[] choice = new String[] {"What you find?","Adoption","Lost","My Pet"};
+
+        //test();
+
         allPets = db.getAllPets();
         allRelations = db.getAllRelations();
         user =  userIntent.getParcelableExtra("User");
@@ -59,7 +64,20 @@ public class FindPetsActivity extends AppCompatActivity {
 
 
     }
+   /* public void test()
+    {
+        null is not acceptable for imageUri, cant run
 
+        Pet testPet1 = new Pet("Jhin","Dog","Strong.",false,false, null);
+        Pet testPet2 = new Pet("Ahri","Cat","Cute.",false,false,null);
+        Pet testPet3 = new Pet("Jax","Fish","Hop Step Jump",false,false,null);
+        Pet testPet4 = new Pet("Ashe","Bird","Fly as a wind",false,false,null);
+        db.addPet(testPet1);
+        db.addPet(testPet2);
+        db.addPet(testPet3);
+        db.addPet(testPet4);
+    }
+*/
     public void viewPetDetail(View view)
     {
         Intent detailIntent = new Intent(FindPetsActivity.this,PetDetailsActivity.class);
