@@ -23,7 +23,7 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
     private List<Pet> mPetsList = new ArrayList<>();
     private int mResourceId;
     private User petOwner;
-    private List<Relation> mAllRelations;
+  //  private List<Relation> mAllRelations;
     private LinearLayout petListLinearLayout;
     private TextView petListNameTextView;
     private TextView petListTypeTextView;
@@ -39,12 +39,12 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
      * @param relations List for Relation, it is for getting username who have the pet
      * @author Mahiro Mizukami
      */
-    public FindPetListAdapter(Context context, int resource, List<Pet> pets,List<Relation> relations) {
+    public FindPetListAdapter(Context context, int resource, List<Pet> pets/*,List<Relation> relations*/) {
         super(context, resource);
         mContext = context;
         mResourceId = resource;
         mPetsList = pets;
-        mAllRelations = relations;
+      //  mAllRelations = relations;
     }
 
 
@@ -63,12 +63,12 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
 
         final Pet selectedPet = mPetsList.get(pos);
 
-        for(Relation singleRelation : mAllRelations)
+    /*    for(Relation singleRelation : mAllRelations)
         {
             if(singleRelation.getPet() == selectedPet)
                petOwner =  singleRelation.getUser();
         }
-
+*/
         LayoutInflater inflater =
                 (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(mResourceId,null);
@@ -80,11 +80,11 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
 
         petListNameTextView = (TextView) view.findViewById(R.id.petListNameTextView);
         petListTypeTextView = (TextView) view.findViewById(R.id.petListTypeTextView);
-        petListUserNameTextView = (TextView) view.findViewById(R.id.petListUserNameTextView);
+        //petListUserNameTextView = (TextView) view.findViewById(R.id.petListUserNameTextView);
 
         petListNameTextView.setText(selectedPet.getPetName());
         petListTypeTextView.setText(selectedPet.getType());
-        petListUserNameTextView.setText(petOwner.getUserName());
+      //  petListUserNameTextView.setText(petOwner.getUserName());
 
 
         return view;

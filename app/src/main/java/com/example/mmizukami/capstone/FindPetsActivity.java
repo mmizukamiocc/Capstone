@@ -54,12 +54,12 @@ public class FindPetsActivity extends AppCompatActivity {
         //test();
 
         allPets = db.getAllPets();
-        allRelations = db.getAllRelations();
+   //     allRelations = db.getAllRelations();
         user =  userIntent.getParcelableExtra("User");
         choiceSpinner = (Spinner) findViewById(R.id.choiceSpinner);
 
         filteredPetList = new ArrayList<>(allPets);
-        findPetListAdapter = new FindPetListAdapter(FindPetsActivity.this,R.layout.pet_list_item,filteredPetList,allRelations);
+        findPetListAdapter = new FindPetListAdapter(FindPetsActivity.this,R.layout.pet_list_item,filteredPetList/*,allRelations*/);
         findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
         findTypeEditText.addTextChangedListener(findTypeTextWatcher);
         petsListView = (ListView) findViewById(R.id.petsListView);
@@ -176,7 +176,7 @@ public class FindPetsActivity extends AppCompatActivity {
 
                     break;
 
-                case 3:
+          /*      case 3:
                 for(Relation singleRelation: allRelations) {
                   if(!(singleRelation.getUser() == user))
                   {
@@ -186,7 +186,9 @@ public class FindPetsActivity extends AppCompatActivity {
                 }
 
                     break;
+            */
             }
+
 
         }
 

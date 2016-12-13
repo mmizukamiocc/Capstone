@@ -19,6 +19,13 @@ import android.widget.Toast;
 public class EditUserInfoActivity extends AppCompatActivity {
 
     private User loginUser;
+    private String name;
+    private String email;
+    private String phone;
+    private String oldPassword;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +43,17 @@ public class EditUserInfoActivity extends AppCompatActivity {
         Intent updateIntent = getIntent();
         loginUser = updateIntent.getParcelableExtra("User");
 
-        String name = updateIntent.getStringExtra("real_name");
-        String email = updateIntent.getStringExtra("email");
-        String phone = updateIntent.getStringExtra("phone");
-        String oldPassword = updateIntent.getStringExtra("password");
+        name = loginUser.getRealName();
+        email = loginUser.getEmail();
+        phone = loginUser.getPhone();
+        oldPassword = loginUser.getPassword();
 
         euiName.setText(name);
         euiEmailAddress.setText(email);
         euiPhone.setText(phone);
 
 
-        if (oldPassword == euiOldPassword.getText().toString())
+        if (oldPassword.equals(euiOldPassword.getText().toString()))
         {
             if (euiName.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "Please enter a name.", Toast.LENGTH_SHORT).show();
@@ -64,7 +71,8 @@ public class EditUserInfoActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please enter a new password.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            else if (!euiNewPassword.getText().toString().trim().isEmpty())
+
+            if (!euiNewPassword.getText().toString().trim().isEmpty())
                 euiUpdate.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         loginUser.setRealName(euiName.getText().toString());
