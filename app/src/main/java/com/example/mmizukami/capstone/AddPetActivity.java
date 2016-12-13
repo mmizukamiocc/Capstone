@@ -39,6 +39,7 @@ public class AddPetActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 573;
     private Uri imageURI;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,10 +131,10 @@ public class AddPetActivity extends AppCompatActivity {
         }
         else if (imageURI == getUriToResource(this, R.drawable.dog))
         {
-            Toast.makeText(this, "Please select an image."
+            Toast.makeText(this, "Please select an image.",Toast.LENGTH_SHORT).show();
         }
         else {
-            Pet petToAdd = new Pet (petNameEntryEditText.getText().toString(),
+             Pet petToAdd = new Pet (petNameEntryEditText.getText().toString(),
                     petTypeSpinner.getSelectedItem().toString(),
                     petDescriptionEditText.getText().toString(),
                     isAdoptedCheckBox.isChecked(),
@@ -143,7 +144,7 @@ public class AddPetActivity extends AppCompatActivity {
 
             db.addPet(petToAdd);
             db.addRelation(relationToAdd);
-            Toast.makeText(this, petToAdd.getName() + " has been added to the list of pets.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, petToAdd.getPetName() + " has been added to the list of pets.", Toast.LENGTH_SHORT).show();
             
             Intent addIntent = new Intent(AddPetActivity.this, MenuActivity.class);
             addIntent.putExtra("User", loginUser);

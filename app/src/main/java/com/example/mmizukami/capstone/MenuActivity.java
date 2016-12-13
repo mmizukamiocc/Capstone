@@ -1,9 +1,13 @@
 package com.example.mmizukami.capstone;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 /**
  * Menu page for the app
@@ -20,18 +24,22 @@ public class MenuActivity extends AppCompatActivity {
 
     private User loginUser;
 
+    private ImageView imageView4;
+    private Animation jumpAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        imageView4 = (ImageView) findViewById(R.id.imageView4);
         Intent userIntent = getIntent();
         loginUser = userIntent.getParcelableExtra("User");
     }
 
     public void onClick(View view)
     {
+
         switch (view.getId())
         {
             case R.id.findButton:
@@ -63,6 +71,17 @@ public class MenuActivity extends AppCompatActivity {
                startActivity(mapIntent);
                break;
 
+            case R.id.imageView4:
+            jumpAnim = AnimationUtils.loadAnimation(this,R.anim.jump_anim);
+
+                if(jumpAnim.hasStarted()) {
+                    imageView4.clearAnimation();
+                    jumpAnim = null;
+                }
+                else
+                    imageView4.startAnimation(jumpAnim);
+
+            break;
 
         }
 

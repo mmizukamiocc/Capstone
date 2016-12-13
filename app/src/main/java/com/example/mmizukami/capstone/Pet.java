@@ -244,7 +244,7 @@ public class Pet implements Parcelable{
      * Default value for mImageUri
      * @author Mahiro Mizukami
      * */
-    public Uri defaultImageUri(@NonNull Context context) throws Resources.NotFoundException {
+    public Uri defaultImageUri() throws Resources.NotFoundException {
         Resources res = context.getResources();
 
         return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +

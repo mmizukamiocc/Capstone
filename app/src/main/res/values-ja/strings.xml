@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <resources>
+
         <string name="app_name">Capstone</string>
         <string name="splash">ペットプロテクター</string>
         <string name="password">パスワード</string>
@@ -52,6 +52,6 @@
         <string name="edit_title">ユーザー情報を編集する</string>
         <string name="update_info">更新</string>
 
-    </resources>
+
 
 </resources>
