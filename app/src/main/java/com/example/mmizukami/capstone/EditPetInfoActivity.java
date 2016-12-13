@@ -133,7 +133,7 @@ public class EditPetInfoActivity extends AppCompatActivity {
         }
         else if (imageURI == getUriToResource(this, R.drawable.dog))
         {
-
+            Toast.makeText(this, "Please select an image.",Toast.LENGTH_SHORT).show();
         }
         else {
             Pet petToAdd = new Pet (epiName.getText().toString(),
@@ -147,6 +147,8 @@ public class EditPetInfoActivity extends AppCompatActivity {
             {
                 petUpdate.setPet(petToAdd);
             }
+
+            Toast.makeText(this, "Pet info has been updated.", Toast.LENGTH_SHORT).show();
 
             Intent addIntent = new Intent(EditPetInfoActivity.this, MenuActivity.class);
             addIntent.putExtra("User", loginUser);
