@@ -50,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Send the Context of this class to other classes, I'm not sure it work or not
+     *  @return MainActivity to get Context;
+     *  @author Mahiro Mizukami
+     */
     public static synchronized MainActivity getInstance()
     {
         return mContext;

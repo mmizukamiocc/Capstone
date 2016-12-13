@@ -47,6 +47,14 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * onClick event to sign up button
+     * get all data from user input, and if there is no username duplication and password is 8digits, send it to database
+     *
+     *  @param view sign up button
+     *  @input String username, String password, String realName, String emailAddress, String phone
+     *  @author Mahiro Mizukami
+     */
     public void onClick(View view) {
         boolean valid = true;
 
