@@ -42,10 +42,21 @@ public class Relation implements Parcelable {
     }
     
     /**
+    * Getter for relationId.
+     @return int ID associated with Relation object
+    *
+    * @author Ethan Quach
+    */
+    public int getId() {
+        return relationId;
+    }
+    
+    
+    /**
     * Getter for mPet.
     * @return Pet associated with Relation object
     *
-    * @Aathor Ethan Quach
+    * @author Ethan Quach
     */
     public Pet getPet() {
         return mPet;
