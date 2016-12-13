@@ -130,10 +130,9 @@ public class AddPetActivity extends AppCompatActivity {
         }
         else if (imageURI == getUriToResource(this, R.drawable.dog))
         {
-
+            Toast.makeText(this, "Please select an image."
         }
         else {
-            // TODO: What am I doing with this data?
             Pet petToAdd = new Pet (petNameEntryEditText.getText().toString(),
                     petTypeSpinner.getSelectedItem().toString(),
                     petDescriptionEditText.getText().toString(),
