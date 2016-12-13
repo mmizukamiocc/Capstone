@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Capstone</string>
+    <string name="add_contacts_button_text">añadir contactos...</string>
+    <string name="add_pet_text">Añadir una mascota </string>
+    <string name="desc_placeholder"><![CDATA[<descripción no encontrada>]]></string>
+    <string name="edit_pet_info"> Editar información de la mascota</string>
+    <string name="edit_title">Editar información de usuario </string>
+    <string name="email"> Dirección de correo electrónico</string>
+    <string name="enter_desc">Introduzca la descripción aquí...</string>
+    <string name="enter_name">Introduce el nombre aquí...</string>
+    <string name="enter_type">Escriba aquí... </string>
+    <string name="enter_password">Introducir la contraseña </string>
+    <string name="enter_username">Introduzca su nombre de usuario </string>
+    <string name="has_been_adopted"> ¿Se adopta esta mascota? (Marque "Sí")</string>
+    <string name="login_button">Iniciar sesión </string>
+    <string name="map_menu">Buscador de ubicaciones </string>
+    <string name="name">Nombre</string>
+    <string name="name_placeholder"><![CDATA[<Nombre no encontrado>]]></string>
+    <string name="new_password">nueva contraseña </string>
+    <string name="next">Siguiente</string>
+    <string name="old_password">Contraseña anterior </string>
+    <string name="password">Contraseña</string>
+    <string name="pet_adoption">Adopción de mascotas </string>
+    <string name="pet_desc">Descripción de la mascota </string>
+    <string name="pet_find">Encuentra Pet </string>
+    <string name="pet_name">Nombre de la mascota </string>
+    <string name="pet_status"> Estado:</string>
+    <string name="pet_type">Tipo de mascota </string>
+    <string name="phone_number">Número de teléfono </string>
+    <string name="register_here">¡Registrar aquí! </string>
+    <string name="select_image">Seleccione una imagen... </string>
+    <string name="send_text_message_button_text">Envía un mensaje de texto </string>
+    <string name="sign_up_button">Regístrate</string>
+    <string name="status_placeholder"><![CDATA[<Estado no encontrado >]]></string>
+    <string name="text_message_hint">Introduzca el mensaje de texto aquí... </string>
+    <string name="type_of_pet">Tipo de mascota (opcional) </string>
+    <string name="update_info">Actualizar</string>
+    <string name="user_info">Informacion del usuario </string>
+    <string name="user_name">Nombre de usuario </string>
+    <string name="splash">Protector para mascotas </string>
+</resources>
