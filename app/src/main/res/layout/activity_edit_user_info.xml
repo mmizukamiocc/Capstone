@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/edit_title"
-        android:id="@+id/textView1"
+        android:id="@+id/textView14"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -82,14 +82,14 @@
         android:layout_below="@+id/euiPhone"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/textView5"
+        android:id="@+id/textView15"
         android:text="@string/old_password" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/euiOldPassword"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/textView1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"

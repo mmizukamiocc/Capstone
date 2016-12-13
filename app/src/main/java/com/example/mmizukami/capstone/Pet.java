@@ -56,7 +56,7 @@ public class Pet implements Parcelable{
         mDescription = "";
         mAdoption = false;
         mLost = false;
-        mImageUri = defaultImageUri();
+        mImageUri = Uri.parse("android.resource://com.example.mmizukami.capstone/" + R.drawable.dog);
     }
 
     /**
@@ -71,7 +71,7 @@ public class Pet implements Parcelable{
         this.mDescription = mDescription;
         this.mAdoption = mAdoption;
         this.mLost = mLost;
-        this.mImageUri = defaultImageUri();
+        this.mImageUri =  Uri.parse("android.resource://com.example.mmizukami.capstone/" + R.drawable.dog);
     }
 
     /**
@@ -244,9 +244,8 @@ public class Pet implements Parcelable{
      * Default value for mImageUri
      * @author Mahiro Mizukami
      * */
-    public Uri defaultImageUri() throws Resources.NotFoundException {
-        mContext =  MainActivity.getInstance().getApplicationContext();
-        Resources res = mContext.getResources();
+    public Uri defaultImageUri(@NonNull Context context) throws Resources.NotFoundException {
+        Resources res = context.getResources();
 
         return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
         "://" + res.getResourcePackageName(R.drawable.dog)

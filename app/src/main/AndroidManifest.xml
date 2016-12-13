@@ -26,7 +26,10 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".PetDetailsActivity" />
-        <activity android:name=".AddPetActivity" />
+        <activity
+            android:name=".AddPetActivity"
+            android:label="@string/title_activity_add_pet"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UserAreaActivity" />
         <activity android:name=".FindPetsActivity" />
         <activity android:name=".MenuActivity" />
@@ -45,7 +48,7 @@
 
         <activity android:name=".MapActivity" />
         <activity android:name=".EditUserInfoActivity" />
-        <activity android:name=".EditPetInfoActivity"></activity>
+        <activity android:name=".EditPetInfoActivity" />
     </application>
 
 </manifest>
