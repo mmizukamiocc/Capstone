@@ -60,6 +60,8 @@ public class FindPetsActivity extends AppCompatActivity {
 
         filteredPetList = new ArrayList<>(allPets);
         filteredPetList = allPets;
+
+
         findPetListAdapter = new FindPetListAdapter(FindPetsActivity.this,R.layout.pet_list_item,filteredPetList/*,allRelations*/);
         findTypeEditText =(EditText) findViewById(R.id.findTypeEditText);
         findTypeEditText.addTextChangedListener(findTypeTextWatcher);
