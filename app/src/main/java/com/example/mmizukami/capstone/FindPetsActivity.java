@@ -1,7 +1,6 @@
 package com.example.mmizukami.capstone;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -52,7 +51,7 @@ public class FindPetsActivity extends AppCompatActivity {
         Intent userIntent = getIntent();
         String[] choice = new String[] {"What you find?","Adoption","Lost","My Pet"};
 
-        test();
+        //test();
 
         allPets = db.getAllPets();
         allRelations = db.getAllRelations();

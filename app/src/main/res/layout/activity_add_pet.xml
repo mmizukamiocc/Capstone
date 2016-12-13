@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/addPetNextButton"
                 android:layout_weight="0.05"
-                android:onClick="onNext (AddPetActivity)" />
+                android:onClick="onNextButtonClick" />
 
         </LinearLayout>
     </ScrollView>

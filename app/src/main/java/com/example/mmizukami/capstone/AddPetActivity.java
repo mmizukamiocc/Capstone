@@ -122,7 +122,7 @@ public class AddPetActivity extends AppCompatActivity {
                 + '/' + res.getResourceEntryName(resId));
     }
 
-    public void onNext(View view) {
+    public void onNextButtonClick(View view) {
 
         if (petNameEntryEditText.getText().toString().equals("") ||
                 petDescriptionEditText.getText().toString().equals("")) {

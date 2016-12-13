@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/update_info"
                 android:id="@+id/epiUpdatePet"
-                android:onClick="onUpdate" />
+                android:onClick="onNextButtonClick" />
 
         </LinearLayout>
     </ScrollView>
