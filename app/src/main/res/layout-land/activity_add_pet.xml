@@ -67,7 +67,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="167dp"
-                app:srcCompat="@android:drawable/ic_menu_gallery"
+                app:srcCompat="@drawable/dog"
                 android:id="@+id/epiPetImageSelect"
                 android:onClick="selectPetImage"
                 android:layout_weight="0.05" />
