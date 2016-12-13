@@ -144,6 +144,8 @@ public class AddPetActivity extends AppCompatActivity {
 
             db.addPet(petToAdd);
             db.addRelation(relationToAdd);
+            Toast.makeText(this, petToAdd.getName() + " has been added to the list of pets.", Toast.LENGTH_SHORT).show();
+            
             Intent addIntent = new Intent(AddPetActivity.this, MenuActivity.class);
             addIntent.putExtra("User", loginUser);
             startActivity(addIntent);
