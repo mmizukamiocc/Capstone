@@ -81,6 +81,7 @@ public class FindPetsActivity extends AppCompatActivity {
      *  it have to have relations too
      *  @author Mahiro Mizukami
      */
+/*
     private void test()
     {
 
@@ -94,7 +95,7 @@ public class FindPetsActivity extends AppCompatActivity {
         filteredPetList.add(testPet3);
         filteredPetList.add(testPet4);
     }
-
+*/
     /**
      * onClick event for the ListView, it send selected pet and login user as intent to PetDetailActivity
      *  @param view selected item from ListView
