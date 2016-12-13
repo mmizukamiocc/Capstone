@@ -14,7 +14,7 @@ public class Relation implements Parcelable {
     private User mUser;
 
     /**
-    * 'cnstructor for Relation object.
+    * Constructor for Relation object.
     * Takes in an int for the relationId,
     * a Pet for the mPet field, and a User for the mUser field.
     * Primarily used to inflate detail layout.
