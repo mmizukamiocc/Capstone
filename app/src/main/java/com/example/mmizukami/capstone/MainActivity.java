@@ -1,5 +1,6 @@
 package com.example.mmizukami.capstone;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button logInButton;
     private Button signUpButton;
-
+    private static MainActivity mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         logInButton = (Button) findViewById(R.id.logInButton);
         signUpButton = (Button) findViewById(R.id.signUpButton);
-
+        mContext = this;
     }
 
 
@@ -49,4 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public static synchronized MainActivity getInstance()
+    {
+        return mContext;
+    }
 }

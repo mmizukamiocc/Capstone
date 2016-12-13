@@ -20,7 +20,7 @@ public class Pet implements Parcelable{
     private boolean mAdoption;
     private boolean mLost;
     private Uri mImageUri;
-
+    private Context mContext;
     /**
      * Constructor for Pet object
      * all param can not be @code null
