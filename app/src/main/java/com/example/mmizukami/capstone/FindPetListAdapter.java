@@ -13,7 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by mmizukami on 11/29/2016.
+ * Adapter for FindPetsActivity
+ *
  */
 
 public class FindPetListAdapter extends ArrayAdapter<Pet> {
@@ -36,6 +37,7 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
         mPetsList = pets;
         mAllRelations = relations;
     }
+
 
     @Override
     public View getView(int pos, View convertView, ViewGroup parent)

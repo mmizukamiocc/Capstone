@@ -5,10 +5,10 @@
 
         <translate android:duration="800"
             android:fromYDelta="0"
-            android:toYDelta="10%p"/>
+            android:toYDelta="-5%p"/>
 
         <translate android:duration="500"
-            android:fromYDelta="10%p"
+            android:fromYDelta="-5%p"
             android:toYDelta="0"
             android:startOffset="800"/>
 

@@ -20,7 +20,7 @@ public class Pet implements Parcelable{
     private boolean mAdoption;
     private boolean mLost;
     private Uri mImageUri;
-
+    private Context mContext;
     /**
      * Constructor for Pet object
      * all param can not be @code null
@@ -245,7 +245,8 @@ public class Pet implements Parcelable{
      * @author Mahiro Mizukami
      * */
     public Uri defaultImageUri() throws Resources.NotFoundException {
-        Resources res = context.getResources();
+        mContext =  MainActivity.getInstance().getApplicationContext();
+        Resources res = mContext.getResources();
 
         return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
         "://" + res.getResourcePackageName(R.drawable.dog)
