@@ -59,6 +59,15 @@ public class MessageActivity extends AppCompatActivity {
 
     }
 
+
+    /**
+     * sendTextMessage event to send message.
+     * get data from user and then send the message to that user.
+     *
+     *  @param view send text button
+     *  @input User singleContact, String message
+     *  @author Son Nguyuen
+     */
     public void sendTextMessage(View view) {
         String message = messageEditText.getText().toString();
         if (message.trim().isEmpty()) {
