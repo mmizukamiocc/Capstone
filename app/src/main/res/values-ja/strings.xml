@@ -51,7 +51,7 @@
         <string name="email">Eメールアドレス</string>
         <string name="edit_title">ユーザー情報を編集する</string>
         <string name="update_info">更新</string>
-
+        <string name="title_activity_add_pet">ペット追加アクティビティ</string>
 
 
 </resources>
