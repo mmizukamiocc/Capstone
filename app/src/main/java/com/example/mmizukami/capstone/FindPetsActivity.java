@@ -47,7 +47,7 @@ public class FindPetsActivity extends AppCompatActivity {
         Intent userIntent = getIntent();
         String[] choice = new String[] {"What you find?","Adoption","Lost","My Pet"};
 
-    //    test();
+        test();
 
         allPets = db.getAllPets();
         allRelations = db.getAllRelations();
@@ -76,10 +76,10 @@ public class FindPetsActivity extends AppCompatActivity {
         Pet testPet2 = new Pet("Ahri","Cat","Cute.",true,false);
         Pet testPet3 = new Pet("Jax","Fish","Hop Step Jump",false,true);
         Pet testPet4 = new Pet("Ashe","Bird","Fly as a wind",false,false);
-        db.addPet(testPet1);
-        db.addPet(testPet2);
-        db.addPet(testPet3);
-        db.addPet(testPet4);
+        filteredPetList.add(testPet1);
+       filteredPetList.add(testPet2);
+        filteredPetList.add(testPet3);
+        filteredPetList.add(testPet4);
     }
     public void viewPetDetail(View view)
     {
