@@ -1,76 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_add_pet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.example.mmizukami.capstone.AddPetActivity">
+    tools:context="com.example.mmizukami.capstone.UserAreaActivity">
 
-    <TextView
-        android:text="@string/add_pet_text"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/addPetTextView"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:text="@string/pet_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/petNameEntryTextView"
-        android:layout_weight="0.05" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/enter_name"
-        android:ems="10"
-        android:id="@+id/petNameEntryEditText" />
+            <TextView
+                android:text="@string/edit_pet_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_weight="0.05" />
 
-    <TextView
-        android:text="@string/pet_type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/petTypeTextView"
-        android:layout_weight="0.06" />
+            <TextView
+                android:text="@string/pet_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_weight="0.05" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/enter_type"
-        android:ems="10"
-        android:id="@+id/petTypeEditText" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@string/enter_name"
+                android:ems="10"
+                android:id="@+id/epiName"
+                android:layout_weight="0.05" />
 
-    <TextView
-        android:text="@string/pet_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/petDescriptionTextView"
-        android:layout_weight="0.05" />
+            <TextView
+                android:text="@string/pet_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_weight="0.05" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/enter_desc"
-        android:ems="10"
-        android:id="@+id/petDescriptionEditText"
-        android:layout_weight="0.48"
-        android:gravity="top|center_vertical" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/epiPetType" />
 
-    <Button
-        android:text="@string/next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/addPetNextButton" />
+            <TextView
+                android:text="@string/select_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:layout_weight="0.05" />
 
-</LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                app:srcCompat="@android:drawable/ic_menu_gallery"
+                android:id="@+id/epiPetImageSelect"
+                android:onClick="selectPetImage"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:text="@string/pet_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12"
+                android:layout_weight="0.05" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:inputType="textPersonName"
+                android:text="@string/enter_desc"
+                android:ems="10"
+                android:id="@+id/epiPetDescription"
+                android:gravity="top|center_vertical" />
+
+            <CheckBox
+                android:text="@string/has_been_adopted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/epiAdoptedCheckBox"
+                android:layout_weight="0.05" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/update_info"
+                android:id="@+id/epiUpdatePet"
+                android:onClick="onUpdate" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

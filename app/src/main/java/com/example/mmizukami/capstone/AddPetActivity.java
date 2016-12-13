@@ -122,7 +122,7 @@ public class AddPetActivity extends AppCompatActivity {
                 + '/' + res.getResourceEntryName(resId));
     }
 
-    public void onNextClick(View view) {
+    public void onNext(View view) {
 
         if (petNameEntryEditText.getText().toString().equals("") ||
                 petDescriptionEditText.getText().toString().equals("")) {
@@ -131,10 +131,10 @@ public class AddPetActivity extends AppCompatActivity {
         }
         else if (imageURI == getUriToResource(this, R.drawable.dog))
         {
-            Toast.makeText(this, "Please select an image.",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please select an image.", Toast.LENGTH_SHORT).show();
         }
         else {
-             Pet petToAdd = new Pet (petNameEntryEditText.getText().toString(),
+            Pet petToAdd = new Pet (petNameEntryEditText.getText().toString(),
                     petTypeSpinner.getSelectedItem().toString(),
                     petDescriptionEditText.getText().toString(),
                     isAdoptedCheckBox.isChecked(),
@@ -145,7 +145,7 @@ public class AddPetActivity extends AppCompatActivity {
             db.addPet(petToAdd);
             db.addRelation(relationToAdd);
             Toast.makeText(this, petToAdd.getPetName() + " has been added to the list of pets.", Toast.LENGTH_SHORT).show();
-            
+
             Intent addIntent = new Intent(AddPetActivity.this, MenuActivity.class);
             addIntent.putExtra("User", loginUser);
             startActivity(addIntent);

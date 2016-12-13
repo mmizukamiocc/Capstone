@@ -27,9 +27,14 @@
     <string name="name_placeholder">&lt;name not found&gt;</string>
     <string name="desc_placeholder">&lt;description not found&gt;</string>
     <string name="status_placeholder">&lt;status not found&gt;</string>
+    <string name="status_actual">Status:</string>
+    <string name="status_adoptable">Up for adoption</string>
+    <string name="status_adopted">Adopted</string>
+    <string name="status_lost">Lost</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter Password</string>
     <string name="register_here">Register Here!</string>
+    <string name="send_a_message">Send a text message response to this…</string>
 
     <string-array name="pet_types_array">
         <item>Dog</item>
@@ -49,5 +54,6 @@
     <string name="email">Email Address</string>
     <string name="edit_title">Edit User Info</string>
     <string name="update_info">Update</string>
+    <string name="title_activity_add_pet">AddPetActivity</string>
 
 </resources>

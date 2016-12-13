@@ -96,14 +96,14 @@
                 android:layout_below="@+id/euiPhone"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:id="@+id/textView5"
+                android:id="@+id/textView13"
                 android:text="@string/old_password" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/euiOldPassword"
-                android:layout_below="@+id/textView5"
+                android:layout_below="@+id/textView1"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentRight="true"
