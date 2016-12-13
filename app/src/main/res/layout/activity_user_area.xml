@@ -29,7 +29,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/uaUserName"
@@ -37,7 +37,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +50,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/uaName"
@@ -57,7 +58,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,7 +70,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/uaEmailAddress"
@@ -76,7 +78,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/uaName"
-        android:layout_alignEnd="@+id/uaName" />
+        android:layout_alignEnd="@+id/uaName"
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,7 +90,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/uaPhone"
@@ -95,10 +98,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/uaEmailAddress"
-        android:layout_alignEnd="@+id/uaEmailAddress" />
+        android:layout_alignEnd="@+id/uaEmailAddress"
+        android:textSize="25sp" />
 
     <Button
-        android:text="@string/update_info"
+        android:text="@string/edit_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/uaPhone"

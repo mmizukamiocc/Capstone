@@ -8,6 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * EditUserInfo page use to edit user info.
+ * It starts MenuActivity when edit has been done.
+ *
+ *  @input - EditText euiName, EditText euiEmailAddress, EditText euiPhone,
+ *          EditText euiOldPassword, EditText euiNewPassword,
+ *  @author Son Nguyen
+ */
 public class EditUserInfoActivity extends AppCompatActivity {
 
     private User loginUser;
@@ -21,7 +29,7 @@ public class EditUserInfoActivity extends AppCompatActivity {
         final EditText euiEmailAddress = (EditText) findViewById(R.id.euiEmailAddress);
         final EditText euiPhone = (EditText) findViewById(R.id.euiPhone);
         final EditText euiOldPassword = (EditText) findViewById(R.id.euiOldPassword);
-        final EditText euiPassword = (EditText) findViewById(R.id.euiPassword);
+        final EditText euiNewPassword = (EditText) findViewById(R.id.euiNewPassword);
         final Button euiUpdate = (Button) findViewById(R.id.euiUpdate);
 
 
@@ -31,32 +39,38 @@ public class EditUserInfoActivity extends AppCompatActivity {
         String name = updateIntent.getStringExtra("real_name");
         String email = updateIntent.getStringExtra("email");
         String phone = updateIntent.getStringExtra("phone");
-        String password = updateIntent.getStringExtra("password");
+        String oldPassword = updateIntent.getStringExtra("password");
 
         euiName.setText(name);
         euiEmailAddress.setText(email);
         euiPhone.setText(phone);
 
-        if (password == euiOldPassword.getText().toString())
+
+        if (oldPassword == euiOldPassword.getText().toString())
         {
             if (euiName.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "Please enter a name.", Toast.LENGTH_SHORT).show();
                 return;
-            } else if (euiEmailAddress.getText().toString().trim().isEmpty()) {
+            }
+            else if (euiEmailAddress.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "Please enter a email address.", Toast.LENGTH_SHORT).show();
                 return;
-            } else if (euiPhone.getText().toString().trim().isEmpty()) {
+            }
+            else if (euiPhone.getText().toString().trim().isEmpty()) {
                 Toast.makeText(this, "Please enter a phone number.", Toast.LENGTH_SHORT).show();
                 return;
-            } else if (!euiName.getText().toString().trim().isEmpty() &&
-                    !euiEmailAddress.getText().toString().trim().isEmpty() &&
-                    !euiPhone.getText().toString().trim().isEmpty()) {
+            }
+            else if (euiNewPassword.getText().toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter a new password.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            else if (!euiNewPassword.getText().toString().trim().isEmpty())
                 euiUpdate.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         loginUser.setRealName(euiName.getText().toString());
                         loginUser.setEmail(euiEmailAddress.getText().toString());
                         loginUser.setPhone(euiPhone.getText().toString());
-                        loginUser.setPassword(euiPassword.getText().toString());
+                        loginUser.setPassword(euiNewPassword.getText().toString());
 
                         Intent addIntent = new Intent(EditUserInfoActivity.this, MenuActivity.class);
                         addIntent.putExtra("User", loginUser);
@@ -64,10 +78,9 @@ public class EditUserInfoActivity extends AppCompatActivity {
                     }
                 });
             }
-        }
         else
         {
-            Toast.makeText(this, euiOldPassword + " is Incorrect",
+            Toast.makeText(this, euiOldPassword.getText().toString() + " is Incorrect",
                     Toast.LENGTH_SHORT).show();
         }
     }

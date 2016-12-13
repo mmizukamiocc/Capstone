@@ -12,7 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Nick on 12/7/2016.
+ * ContactsAdapter page use to user contact.
+ *
+ *  @author Son Nguyen
  */
 
 public class ContactsAdapter extends ArrayAdapter<User> {

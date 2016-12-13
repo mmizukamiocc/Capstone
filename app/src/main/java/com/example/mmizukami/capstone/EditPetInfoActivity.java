@@ -25,6 +25,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * EditPetInfo page use to edit pet info.
+ * It starts MenuActivity when edit has been done.
+ *
+ *  @input - String epiName, Spinner epiPetType, Uri imageUrl,
+ *          EditText epiPetDescription, CheckBox epiAdoptedCheckBox,
+ *  @author Son Nguyen
+ */
 public class EditPetInfoActivity extends AppCompatActivity {
 
     User loginUser;

@@ -8,6 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * UserArea page use to show user info
+ * It starts EditUserInfo if update button is clicked.
+ *
+ *  @author Son Nguyen
+ */
 public class UserAreaActivity extends AppCompatActivity {
 
     User loginUser;
@@ -17,10 +23,10 @@ public class UserAreaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
 
-        final EditText uaUserName = (EditText) findViewById(R.id.uaUserName);
-        final EditText uaName = (EditText) findViewById(R.id.uaName);
-        final EditText uaEmailAddress = (EditText) findViewById(R.id.uaEmailAddress);
-        final EditText uaPhone = (EditText) findViewById(R.id.uaPhone);
+        final TextView uaUserName = (TextView) findViewById(R.id.uaUserName);
+        final TextView uaName = (TextView) findViewById(R.id.uaName);
+        final TextView uaEmailAddress = (TextView) findViewById(R.id.uaEmailAddress);
+        final TextView uaPhone = (TextView) findViewById(R.id.uaPhone);
         final Button uaEdit = (Button) findViewById(R.id.uaEdit);
         final TextView uaWelcomeMessage = (TextView) findViewById(R.id.uaWelcomeMessage);
 

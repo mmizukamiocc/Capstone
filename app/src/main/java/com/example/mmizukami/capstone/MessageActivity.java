@@ -15,6 +15,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Message page use to send message to other users.
+ * It starts MenuActivity when edit has been done.
+ *
+ *  @input - String epiName, Spinner epiPetType, Uri imageUrl,
+ *          EditText epiPetDescription, CheckBox epiAdoptedCheckBox,
+ *  @author Son Nguyen
+ */
 public class MessageActivity extends AppCompatActivity {
 
     //private static final int REQUEST_CODE_ADD_CONTACT = 200;
