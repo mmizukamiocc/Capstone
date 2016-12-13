@@ -39,6 +39,11 @@ public class FindPetsActivity extends AppCompatActivity {
     private FindPetListAdapter findPetListAdapter;
 
 
+    /**
+     * onCreate method to get all data from database and set views to the member variables, and set adapter
+     *
+     *  @author Mahiro Mizukami
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +73,12 @@ public class FindPetsActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     *  test cases for the petList, but it does not work well
+     *  it have to have relations too
+     *  @author Mahiro Mizukami
+     */
     private void test()
     {
 
@@ -81,6 +92,12 @@ public class FindPetsActivity extends AppCompatActivity {
         filteredPetList.add(testPet3);
         filteredPetList.add(testPet4);
     }
+
+    /**
+     * onClick event for the ListView, it send selected pet and login user as intent to PetDetailActivity
+     *  @param view selected item from ListView
+     *  @author Mahiro Mizukami
+     */
     public void viewPetDetail(View view)
     {
         Intent detailIntent = new Intent(FindPetsActivity.this,PetDetailsActivity.class);

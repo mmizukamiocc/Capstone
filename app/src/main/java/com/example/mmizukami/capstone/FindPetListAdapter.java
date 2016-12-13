@@ -30,6 +30,15 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
     private TextView petListUserNameTextView;
 
 
+    /**
+     * Constructor for the adapter
+     *
+     * @param context context for the Activity
+     * @param resource resource file for the list item
+     * @param pets List for Pet
+     * @param relations List for Relation, it is for getting username who have the pet
+     * @author Mahiro Mizukami
+     */
     public FindPetListAdapter(Context context, int resource, List<Pet> pets,List<Relation> relations) {
         super(context, resource);
         mContext = context;
@@ -39,6 +48,15 @@ public class FindPetListAdapter extends ArrayAdapter<Pet> {
     }
 
 
+    /**
+     * onClick method for the ListView
+     *
+     * @param pos position of the pet in the list
+     * @param convertView view which is converted
+     * @param parent parent ViewGroup for the view
+     * @return View which is returned to this method
+     * @author Mahiro Mizukami
+     */
     @Override
     public View getView(int pos, View convertView, ViewGroup parent)
     {
