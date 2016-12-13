@@ -2,9 +2,11 @@ package com.example.mmizukami.capstone;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 /**
  * Created by mmizukami on 11/10/2016.
@@ -18,7 +20,6 @@ public class Pet implements Parcelable{
     private boolean mAdoption;
     private boolean mLost;
     private Uri mImageUri;
-    private static final Context mContext = ;
 
     /**
      * Constructor for Pet object

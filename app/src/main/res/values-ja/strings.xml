@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <resources>
+        <string name="app_name">Capstone</string>
+        <string name="splash">ペットプロテクター</string>
+        <string name="password">パスワード</string>
+        <string name="old_password">旧パスワード</string>
+        <string name="new_password">新パスワード</string>
+        <string name="user_name">ユーザーネーム</string>
+        <string name="add_pet_text">ペットを追加する</string>
+        <string name="login_button">ログイン</string>
+        <string name="sign_up_button">サインアップ</string>
+        <string name="edit_pet_info">ペットの情報を編集する</string>
+        <string name="pet_name">ペットの名前</string>
+        <string name="pet_type">ペットの種類</string>
+        <string name="pet_desc">ペットの説明</string>
+        <string name="enter_name">名前を入力してください。</string>
+        <string name="type_of_pet">ペットの種類（任意）</string>
+        <string name="enter_type">ペットの種類を入力してください。</string>
+        <string name="enter_desc">ペットの説明を入力してください。</string>
+        <string name="select_image">画像を選択してください。</string>
+        <string name="has_been_adopted">ペットを養子に出しますか？</string>
+        <string name="pet_status">ステータス：</string>
+        <string name="pet_find">ペットを探す</string>
+        <string name="user_info">ユーザー情報</string>
+        <string name="map_menu">ペット用施設検索</string>
+        <string name="pet_adoption">養子</string>
+        <string name="next">次へ</string>
+        <string name="name_placeholder">&lt;名前が見つかりません&gt;</string>
+        <string name="desc_placeholder">&lt;説明が見つかりません&gt;</string>
+        <string name="status_placeholder">&lt;ステータスが見つかりません&gt;</string>
+        <string name="enter_username">ユーザーネームを入力してください。</string>
+        <string name="enter_password">パスワードを入力してください。</string>
+        <string name="register_here">新規登録する！</string>
+
+        <string-array name="pet_types_array">
+            <item>犬</item>
+            <item>猫</item>
+            <item>小動物</item>
+            <item>魚</item>
+            <item>鳥</item>
+            <item>は虫類</item>
+        </string-array>
+
+        // sms
+        <string name="add_contacts_button_text">連絡先を追加する。</string>
+        <string name="send_text_message_button_text">テキストを送る</string>
+        <string name="text_message_hint">メッセージを入力してください。</string>
+        <string name="name">名前</string>
+        <string name="phone_number">電話番号</string>
+        <string name="email">Eメールアドレス</string>
+        <string name="edit_title">ユーザー情報を編集する</string>
+        <string name="update_info">更新</string>
+
+    </resources>
+
+</resources>
