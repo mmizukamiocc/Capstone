@@ -7,6 +7,12 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Splash page use to show initial startup of app.
+ * It starts Main to login.
+ *
+ *  @author Son Nguyen
+ */
 public class SplashActivity extends AppCompatActivity {
 
     @Override

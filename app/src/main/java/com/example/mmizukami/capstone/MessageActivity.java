@@ -15,6 +15,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Message page use to send message to other users.
+ *
+ *  @input - User loginUser
+ *  @author Son Nguyen
+ */
 public class MessageActivity extends AppCompatActivity {
 
     //private static final int REQUEST_CODE_ADD_CONTACT = 200;
